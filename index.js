@@ -28,10 +28,10 @@ var game = new Phaser.Game(config);
 
 function preload() {
     this.load.image("sky", "assets/plano de fundo.png");
-    this.load.image("ground", "assets/platform.png");
+    this.load.image("ground", "assets/plataformagelo.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
-    this.load.spritesheet("dude", "assets/dino1.png", {
+    this.load.spritesheet("dude", "assets/dude.png", {
         frameWidth: 32,
         frameHeight: 48,
     });
@@ -46,11 +46,25 @@ function create() {
 
     platforms = this.physics.add.staticGroup();
 
-    platforms.create(400, 568, "ground").setScale(2).refreshBody();
+    platforms.create(64, 582, "ground");
+    platforms.create(256, 582, "ground");
+    platforms.create(192, 582, "ground");
+    platforms.create(384, 582, "ground");
+    platforms.create(512, 582, "ground");
+    platforms.create(640, 582, "ground");
+    platforms.create(768, 582, "ground");
 
-    platforms.create(600, 450, "ground");
-    platforms.create(400, 450, "ground");
-    platforms.create(600, 250, "ground");
+    platforms.create(64, 18, "ground");
+    platforms.create(256, 18, "ground");
+    platforms.create(192, 18, "ground");
+    platforms.create(384, 18, "ground");
+    platforms.create(512, 18, "ground");
+    platforms.create(640, 18, "ground");
+    platforms.create(768, 18, "ground");
+
+    platforms.create(128, 382, "ground");
+    platforms.create(256, 382, "ground");
+    platforms.create(384, 382, "ground");
     platforms.create(400, 250, "ground");
     platforms.create(50, 350, "ground");
     platforms.create(200, 350, "ground");
@@ -153,8 +167,8 @@ function update() {
     }
 
     if (cursors.up.isDown && player.body.touching.down) {
-        player.setVelocityY(-2000);
-        player2.setVelocityY(-2000);
+        player.setVelocityY(-200);
+        player2.setVelocityY(-200);
     }
 }
 
