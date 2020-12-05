@@ -30,7 +30,7 @@ function preload() {
     this.load.image("sky", "assets/planodefundofogo3.png");
     this.load.image("ground", "assets/plataformafogohorizontal2.png");
     this.load.image("slab", "assets/plataformafogohorizontalmeiobloco.png");
-    this.load.image("wall", "assets/plataformafogovertical2.png");
+    this.load.image("wall", "assets/plataformafogovertical2certa.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
     this.load.spritesheet("dude", "assets/dude.png", {
