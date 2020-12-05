@@ -29,6 +29,8 @@ var game = new Phaser.Game(config);
 function preload() {
     this.load.image("sky", "assets/plano de fundo.png");
     this.load.image("ground", "assets/plataformagelo.png");
+    this.load.image("wall", "assets/plataformagelovertical.png");
+    this.load.image("slab", "assets/plataformagelohorizontalmeiobloco.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
     this.load.spritesheet("dude", "assets/dude.png", {
@@ -49,26 +51,26 @@ function create() {
     platforms.create(64, 582, "ground");
     platforms.create(256, 582, "ground");
     platforms.create(192, 582, "ground");
-    platforms.create(384, 582, "ground");
+    platforms.create(384, 582, "slab");
     platforms.create(512, 582, "ground");
     platforms.create(640, 582, "ground");
     platforms.create(768, 582, "ground");
 
-    platforms.create(64, 18, "ground");
-    platforms.create(256, 18, "ground");
-    platforms.create(192, 18, "ground");
-    platforms.create(384, 18, "ground");
-    platforms.create(512, 18, "ground");
-    platforms.create(640, 18, "ground");
-    platforms.create(768, 18, "ground");
+    platforms.create(64, 8, "ground");
+    platforms.create(256, 8, "ground");
+    platforms.create(192, 8, "ground");
+    platforms.create(384, 8, "ground");
+    platforms.create(512, 8, "ground");
+    platforms.create(640, 8, "ground");
+    platforms.create(768, 8, "ground");
 
     platforms.create(96, 486, "ground");
     platforms.create(224, 486, "ground");
     platforms.create(704, 486, "ground");
 
     platforms.create(96, 390, "ground");
-    platforms.create(224, 390, "ground");
-    platforms.create(352, 390, "ground");
+    platforms.create(224, 390, "slab");
+    platforms.create(352, 390, "slab");
     platforms.create(480, 390, "ground");
     platforms.create(544, 390, "ground");
 
@@ -82,6 +84,19 @@ function create() {
 
 
     platforms.create(704, 166, "ground");
+
+    platforms.create(16, 536, "wall");
+    platforms.create(16, 408, "wall");
+    platforms.create(16, 280, "wall");
+    platforms.create(16, 152, "wall");
+    platforms.create(16, 24, "wall");
+
+    platforms.create(784, 536, "wall");
+    platforms.create(784, 408, "wall");
+    platforms.create(784, 280, "wall");
+    platforms.create(784, 152, "wall");
+    platforms.create(784, 24, "wall");
+
 
     player = this.physics.add.sprite(128, 500, "dude");
 
