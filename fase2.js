@@ -28,9 +28,9 @@ var game = new Phaser.Game(config);
 
 function preload() {
     this.load.image("sky", "assets/plano de fundo.png");
-    this.load.image("ground", "assets/plataformafogohorizontal.png");
+    this.load.image("ground", "assets/plataformafogohorizontal2.png");
     this.load.image("slab", "assets/plataformafogohorizontalmeiobloco.png");
-    this.load.image("wall", "assets/plataformafogovertical.png");
+    this.load.image("wall", "assets/plataformafogovertical2.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
     this.load.spritesheet("dude", "assets/dude.png", {
