@@ -72,7 +72,7 @@ function create() {
     platforms.create(480, 390, "ground");
     platforms.create(544, 390, "ground");
 
-    platforms.create(544, 294, "ground");
+    platforms.create(32, 294, "ground");
 
     platforms.create(704, 262, "ground");
     platforms.create(576, 262, "ground");
@@ -179,8 +179,8 @@ function update() {
     }
 
     if (cursors.up.isDown && player.body.touching.down) {
-        player.setVelocityY(-200);
-        player2.setVelocityY(-200);
+        player.setVelocityY(-300);
+        player2.setVelocityY(-300);
     }
 }
 
