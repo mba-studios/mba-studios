@@ -28,7 +28,9 @@ var game = new Phaser.Game(config);
 
 function preload() {
     this.load.image("sky", "assets/plano de fundo.png");
-    this.load.image("ground", "assets/plataformagelo.png");
+    this.load.image("ground", "assets/plataformafogohorizontal.png");
+    this.load.image("slab", "assets/plataformafogohorizontalmeiobloco.png");
+    this.load.image("wall", "assets/plataformafogovertical.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
     this.load.spritesheet("dude", "assets/dude.png", {
@@ -47,10 +49,10 @@ function create() {
     platforms = this.physics.add.staticGroup();
 
     platforms.create(64, 582, "ground");
-    platforms.create(256, 582, "ground");
-    platforms.create(192, 582, "ground");
-    platforms.create(384, 582, "ground");
-    platforms.create(512, 582, "ground");
+    platforms.create(256, 582, "slab");
+    platforms.create(128, 582, "ground");
+    platforms.create(384, 582, "slab");
+    platforms.create(512, 582, "slab");
     platforms.create(640, 582, "ground");
     platforms.create(768, 582, "ground");
 
@@ -70,13 +72,17 @@ function create() {
 
     platforms.create(96, 262, "ground");
     platforms.create(224, 262, "ground");
-    platforms.create(352, 262, "ground");
+    platforms.create(352, 262, "slab");
     platforms.create(480, 262, "ground");
     platforms.create(544, 262, "ground");
 
+    platforms.create(592, 214, "wall");
+
+
+
     platforms.create(768, 390, "ground");
     platforms.create(640, 390, "ground");
-    platforms.create(512, 390, "ground");
+    platforms.create(512, 390, "slab");
     platforms.create(384, 390, "ground");
 
     platforms.create(96, 486, "ground");
@@ -85,7 +91,21 @@ function create() {
 
 
 
-    player = this.physics.add.sprite(128, 500, "dude");
+
+    platforms.create(16, 536, "wall");
+    platforms.create(16, 408, "wall");
+    platforms.create(16, 280, "wall");
+    platforms.create(16, 152, "wall");
+    platforms.create(16, 24, "wall");
+
+    platforms.create(784, 536, "wall");
+    platforms.create(784, 408, "wall");
+    platforms.create(784, 280, "wall");
+    platforms.create(784, 152, "wall");
+    platforms.create(784, 24, "wall");
+
+
+    player = this.physics.add.sprite(128, 100, "dude");
 
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
@@ -110,7 +130,7 @@ function create() {
         repeat: -1,
     });
 
-    player2 = this.physics.add.sprite(128, 400, "dude2");
+    player2 = this.physics.add.sprite(192, 100, "dude2");
 
     player2.setBounce(0.2);
     player2.setCollideWorldBounds(true);
