@@ -70,14 +70,14 @@ function create() {
 
     platforms.create(96, 390, "ground");
     platforms.create(224, 390, "slab");
-    platforms.create(352, 390, "slab");
+    platforms.create(352, 390, "ground");
     platforms.create(480, 390, "ground");
     platforms.create(544, 390, "ground");
 
     platforms.create(32, 294, "ground");
 
     platforms.create(704, 262, "ground");
-    platforms.create(576, 262, "ground");
+    platforms.create(576, 262, "slab");
     platforms.create(448, 262, "ground");
     platforms.create(352, 230, "ground");
     platforms.create(224, 230, "ground");
