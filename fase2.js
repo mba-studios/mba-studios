@@ -49,10 +49,10 @@ function create() {
     platforms = this.physics.add.staticGroup();
 
     platforms.create(64, 582, "ground");
-    platforms.create(256, 582, "slab");
+    platforms.create(256, 590, "slab");
     platforms.create(128, 582, "ground");
-    platforms.create(384, 582, "slab");
-    platforms.create(512, 582, "slab");
+    platforms.create(384, 590, "slab");
+    platforms.create(512, 590, "slab");
     platforms.create(640, 582, "ground");
     platforms.create(768, 582, "ground");
 
@@ -72,7 +72,7 @@ function create() {
 
     platforms.create(96, 262, "ground");
     platforms.create(224, 262, "ground");
-    platforms.create(352, 262, "slab");
+    platforms.create(352, 270, "slab");
     platforms.create(480, 262, "ground");
     platforms.create(544, 262, "ground");
 
@@ -82,7 +82,7 @@ function create() {
 
     platforms.create(768, 390, "ground");
     platforms.create(640, 390, "ground");
-    platforms.create(512, 390, "slab");
+    platforms.create(512, 398, "slab");
     platforms.create(384, 390, "ground");
 
     platforms.create(96, 486, "ground");
@@ -160,7 +160,7 @@ function create() {
     stars = this.physics.add.group({
         key: "star",
         repeat: 11,
-        setXY: { x: 12, y: 0, stepX: 70 },
+        setXY: { x: 100, y: 200, },
     });
 
 
