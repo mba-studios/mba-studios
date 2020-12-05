@@ -51,7 +51,7 @@ function create() {
     platforms.create(64, 582, "ground");
     platforms.create(256, 582, "ground");
     platforms.create(192, 582, "ground");
-    platforms.create(384, 582, "slab");
+    platforms.create(384, 590, "slab");
     platforms.create(512, 582, "ground");
     platforms.create(640, 582, "ground");
     platforms.create(768, 582, "ground");
@@ -69,7 +69,7 @@ function create() {
     platforms.create(704, 486, "ground");
 
     platforms.create(96, 390, "ground");
-    platforms.create(224, 390, "slab");
+    platforms.create(224, 398, "slab");
     platforms.create(352, 390, "ground");
     platforms.create(480, 390, "ground");
     platforms.create(544, 390, "ground");
@@ -77,7 +77,7 @@ function create() {
     platforms.create(32, 294, "ground");
 
     platforms.create(704, 262, "ground");
-    platforms.create(576, 262, "slab");
+    platforms.create(576, 270, "slab");
     platforms.create(448, 262, "ground");
     platforms.create(352, 230, "ground");
     platforms.create(224, 230, "ground");
