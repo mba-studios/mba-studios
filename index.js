@@ -62,16 +62,28 @@ function create() {
     platforms.create(640, 18, "ground");
     platforms.create(768, 18, "ground");
 
-    platforms.create(128, 382, "ground");
-    platforms.create(256, 382, "ground");
-    platforms.create(384, 382, "ground");
-    platforms.create(400, 250, "ground");
-    platforms.create(50, 350, "ground");
-    platforms.create(200, 350, "ground");
-    platforms.create(50, 150, "ground");
-    platforms.create(200, 150, "ground");
+    platforms.create(96, 486, "ground");
+    platforms.create(224, 486, "ground");
+    platforms.create(704, 486, "ground");
 
-    player = this.physics.add.sprite(100, 450, "dude");
+    platforms.create(96, 390, "ground");
+    platforms.create(224, 390, "ground");
+    platforms.create(352, 390, "ground");
+    platforms.create(480, 390, "ground");
+    platforms.create(544, 390, "ground");
+
+    platforms.create(544, 294, "ground");
+
+    platforms.create(704, 262, "ground");
+    platforms.create(576, 262, "ground");
+    platforms.create(448, 262, "ground");
+    platforms.create(352, 230, "ground");
+    platforms.create(224, 230, "ground");
+
+
+    platforms.create(704, 166, "ground");
+
+    player = this.physics.add.sprite(128, 500, "dude");
 
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
@@ -96,7 +108,7 @@ function create() {
         repeat: -1,
     });
 
-    player2 = this.physics.add.sprite(300, 450, "dude2");
+    player2 = this.physics.add.sprite(128, 400, "dude2");
 
     player2.setBounce(0.2);
     player2.setCollideWorldBounds(true);
