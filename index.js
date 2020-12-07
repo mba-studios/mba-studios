@@ -33,13 +33,13 @@ function preload() {
     this.load.image("slab", "assets/plataformagelohorizontalmeiobloco.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
-    this.load.spritesheet("dude", "assets/dude.png", {
-        frameWidth: 32,
-        frameHeight: 48,
+    this.load.spritesheet("dude", "assets/dino1.png", {
+        frameWidth: 24,
+        frameHeight: 24,
     });
-    this.load.spritesheet("dude2", "assets/dude.png", {
-        frameWidth: 32,
-        frameHeight: 48,
+    this.load.spritesheet("dude2", "assets/dino1.png", {
+        frameWidth: 24,
+        frameHeight: 24,
     });
 }
 
@@ -105,14 +105,14 @@ function create() {
 
     this.anims.create({
         key: "left",
-        frames: this.anims.generateFrameNumbers("dude", { start: 0, end: 3 }),
+        frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
         frameRate: 10,
         repeat: -1,
     });
 
     this.anims.create({
         key: "turn",
-        frames: [{ key: "dude", frame: 4 }],
+        frames: [{ key: "dude", frame: 1 }],
         frameRate: 20,
     });
 
@@ -130,7 +130,7 @@ function create() {
 
     this.anims.create({
         key: "left",
-        frames: this.anims.generateFrameNumbers("dude2", { start: 0, end: 3 }),
+        frames: this.anims.generateFrameNumbers("dude2", { start: 5, end: 8 }),
         frameRate: 10,
         repeat: -1,
     });
@@ -178,35 +178,48 @@ function create() {
 
     this.physics.add.collider(player2, platforms);
     this.physics.add.overlap(player2, stars, collectStar, null, this);
+
+    var A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+    A.on(
+        "down",
+        function () {
+            player2.setVelocityX(-160);
+            player2.anims.play("left", true);
+        },
+        this
+    );
 }
 
 function update() {
     if (cursors.left.isDown) {
         player.setVelocityX(-160);
-        player2.setVelocityX(-160);
+
 
         player.anims.play("left", true);
-        player2.anims.play("left", true);
+
 
     } else if (cursors.right.isDown) {
         player.setVelocityX(160);
-        player2.setVelocityX(160);
+
 
         player.anims.play("right", true);
-        player2.anims.play("right", true);
+
     } else {
         player.setVelocityX(0);
-        player2.setVelocityX(0);
+
 
         player.anims.play("turn");
-        player2.anims.play("turn");
+
     }
 
     if (cursors.up.isDown && player.body.touching.down) {
         player.setVelocityY(-300);
-        player2.setVelocityY(-300);
+
     }
+
 }
+
+
 
 
 
