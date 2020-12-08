@@ -172,6 +172,22 @@ function create() {
   this.physics.add.collider(player2, platforms);
   this.physics.add.overlap(player2, stars, collectStar, null, this);
 
+  this.input.keyboard.on(
+    "keydown_A",
+    function () {
+      player2.setVelocityX(-160);
+      player2.anims.play("left", true);
+    },
+    this
+  );
+  this.input.keyboard.on(
+    "keyup_A",
+    function () {
+      player2.setVelocityX(0);
+      player2.anims.play("left", true);
+    },
+    this
+  );
 }
 
 function update() {
