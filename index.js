@@ -24,6 +24,7 @@ var cursors;
 var score = 0;
 var scoreText;
 var water;
+var gate;
 
 var game = new Phaser.Game(config);
 
@@ -47,20 +48,30 @@ function preload() {
         frameWidth: 24,
         frameHeight: 24,
     });
-}
+
+    this.load.spritesheet("gate", "assets/portalágua.png", {
+        frameWidth: 64,
+        frameHeight: 64,
+    });
+};
 
 function create() {
     this.add.image(400, 300, "sky");
 
     platforms = this.physics.add.staticGroup();
     water = this.physics.add.staticGroup();
+    gate = this.physics.add.staticGroup();
 
-    water.create(224, 390, "water");
+    water.create(224, 382, "water");
+    water.create(384, 574, "water");
+    water.create(576, 254, "water");
+
+    gate.create(736, 120, "gate")
 
     platforms.create(64, 582, "ground");
     platforms.create(256, 582, "ground");
     platforms.create(192, 582, "ground");
-    platforms.create(384, 500, "slab");
+    platforms.create(384, 590, "slab");
     platforms.create(512, 582, "ground");
     platforms.create(640, 582, "ground");
     platforms.create(768, 582, "ground");
