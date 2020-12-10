@@ -24,6 +24,8 @@ var cursors;
 var score = 0;
 var scoreText;
 var water;
+var water2;
+var water3;
 var gate;
 
 var game = new Phaser.Game(config);
@@ -56,17 +58,32 @@ function preload() {
 };
 
 function create() {
+
     this.add.image(400, 300, "sky");
 
+    gate = this.physics.add.sprite(736, 120, "gate");
+
+    this.anims.create({
+        frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 6 }),
+        frameRate: 10,
+        repeat: -1,
+    });
+
+
+    water = this.physics.add.sprite(222, 382, "water");
+    water2 = this.physics.add.sprite(382, 574, "water");
+    water3 = this.physics.add.sprite(572, 254, "water");
+
+    this.anims.create({
+        frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
+        frameRate: 10,
+        repeat: -1,
+    });
+
+
+
+
     platforms = this.physics.add.staticGroup();
-    water = this.physics.add.staticGroup();
-    gate = this.physics.add.staticGroup();
-
-    water.create(224, 382, "water");
-    water.create(384, 574, "water");
-    water.create(576, 254, "water");
-
-    gate.create(736, 120, "gate")
 
     platforms.create(64, 582, "ground");
     platforms.create(256, 582, "ground");
@@ -187,10 +204,17 @@ function create() {
         fill: "#000",
     });
 
+
+
+
+
     this.physics.add.collider(player, platforms);
+    this.physics.add.collider(water, platforms);
+    this.physics.add.collider(water2, platforms);
+    this.physics.add.collider(water3, platforms);
+    this.physics.add.collider(gate, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.overlap(player, stars, collectStar, null, this);
-
     this.physics.add.collider(player2, platforms);
     this.physics.add.overlap(player2, stars, collectStar, null, this);
 
@@ -239,7 +263,7 @@ function create() {
         "keydown_W",
         function () {
 
-            if (player.body.touching.down == 1) {
+            if (player2.body.touching.down == 1) {
 
                 player2.setVelocityY(-300);
 
