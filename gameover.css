@@ -1,0 +1,27 @@
+body {
+    background-image: url(../assets/gameovertela.png);
+    background-position:left;
+    width: 640px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: inherit;
+  }/*colocando o background da tela*/
+  
+    button:focus {
+      outline: none;
+    }
+  
+    input[class=replayBotao] {
+      background-color: transparent;
+      width: 174px;
+      height: 185px;
+      border: transparent;
+  }/*tamanho do botão*/
+
+  input[class=menuBotao] {
+    background-color: transparent;
+    width: 174px;
+    height: 185px;
+    border: transparent;
+}/*tamanho do botão*/
+    
