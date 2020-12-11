@@ -37,6 +37,8 @@ function preload() {
     this.load.image("slab", "assets/plataformagelohorizontalmeiobloco.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
+
+    //this.load.audio("pular, assets/pular.mp3"); quando tento adicionar esse comando, a tela fica preta. 
     this.load.spritesheet("dude", "assets/dino1.png", {
         frameWidth: 24,
         frameHeight: 24,
@@ -64,7 +66,7 @@ function create() {
     gate = this.physics.add.sprite(736, 120, "gate");
 
     this.anims.create({
-        //key: "gateon",
+        key: "left",
         frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
