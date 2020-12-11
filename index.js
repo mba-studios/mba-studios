@@ -42,7 +42,7 @@ function preload() {
         frameHeight: 24,
     });
 
-    this.load.spritesheet("water", "assets/líquidoágua.png", {
+    this.load.spritesheet("water", "assets/liquido.agua.png", {
         frameWidth: 128,
         frameHeight: 16,
     });
@@ -51,7 +51,7 @@ function preload() {
         frameHeight: 24,
     });
 
-    this.load.spritesheet("gate", "assets/portalágua.png", {
+    this.load.spritesheet("gate", "assets/Portal.agua1.png", {
         frameWidth: 64,
         frameHeight: 64,
     });
@@ -64,10 +64,13 @@ function create() {
     gate = this.physics.add.sprite(736, 120, "gate");
 
     this.anims.create({
-        frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 6 }),
+        //key: "gateon",
+        frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
     });
+
+
 
 
     water = this.physics.add.sprite(222, 382, "water");
@@ -75,10 +78,12 @@ function create() {
     water3 = this.physics.add.sprite(572, 254, "water");
 
     this.anims.create({
+        //key: "left",
         frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
     });
+
 
 
 
