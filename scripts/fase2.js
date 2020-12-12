@@ -27,17 +27,17 @@ var scoreText;
 var game = new Phaser.Game(config);
 
 function preload() {
-    this.load.image("sky", "assets/planodefundofogo3.png");
-    this.load.image("ground", "assets/plataformafogohorizontal2.png");
-    this.load.image("slab", "assets/plataformafogohorizontalmeiobloco.png");
-    this.load.image("wall", "assets/plataformafogovertical2certa.png");
-    this.load.image("star", "assets/star.png");
-    this.load.image("bomb", "assets/bomb.png");
-    this.load.spritesheet("dude", "assets/dude.png", {
+    this.load.image("sky", "../assets/planodefundofogo3.png");
+    this.load.image("ground", "../assets/plataformafogohorizontal2.png");
+    this.load.image("slab", "../assets/plataformafogohorizontalmeiobloco.png");
+    this.load.image("wall", "../assets/plataformafogovertical2certa.png");
+    this.load.image("star", "../assets/star.png");
+    this.load.image("bomb", "../assets/bomb.png");
+    this.load.spritesheet("../dude", "assets/dude.png", {
         frameWidth: 32,
         frameHeight: 48,
     });
-    this.load.spritesheet("dude2", "assets/dude.png", {
+    this.load.spritesheet("../dude2", "assets/dude.png", {
         frameWidth: 32,
         frameHeight: 48,
     });
