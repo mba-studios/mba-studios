@@ -286,6 +286,7 @@ function create() {
             if (player2.body.touching.down == 1) {
 
                 player2.setVelocityY(-300);
+                pular.play();
 
             }
         },
@@ -310,6 +311,7 @@ function update() {
 
     if (cursors.up.isDown && player.body.touching.down) {
         player.setVelocityY(-300);
+        pular.play();
     }
 }
 
