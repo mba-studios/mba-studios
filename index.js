@@ -38,7 +38,7 @@ function preload() {
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
 
-    this.load.audio("pular", "assets/pular.mp3");
+    //this.load.audio("pular", "assets/pular.mp3"); 
 
     this.load.spritesheet("dude", "assets/dino1.png", {
         frameWidth: 24,
@@ -67,30 +67,42 @@ function create() {
     gate = this.physics.add.sprite(736, 120, "gate");
 
     this.anims.create({
-        //key: "left",
+        key: "gateon",
         frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
     });
 
-
-
+    gate.anims.play("gateon");
 
     water = this.physics.add.sprite(222, 382, "water");
     water2 = this.physics.add.sprite(382, 574, "water");
     water3 = this.physics.add.sprite(572, 254, "water");
 
     this.anims.create({
-        key: "prof",
+        key: "wateron",
         frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
     });
 
-    this.anims.play("prof");
+    this.anims.create({
+        key: "wateron",
+        frames: this.anims.generateFrameNumbers("water2", { start: 1, end: 4 }),
+        frameRate: 10,
+        repeat: -1,
+    });
 
+    this.anims.create({
+        key: "wateron",
+        frames: this.anims.generateFrameNumbers("water3", { start: 1, end: 4 }),
+        frameRate: 10,
+        repeat: -1,
+    });
 
-
+    water.anims.play("wateron");
+    water2.anims.play("wateron");
+    water3.anims.play("wateron");
 
 
     platforms = this.physics.add.staticGroup();
@@ -144,8 +156,6 @@ function create() {
     platforms.create(784, 24, "wall");
 
     player = this.physics.add.sprite(128, 500, "dude");
-
-
 
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
