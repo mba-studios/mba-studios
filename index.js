@@ -38,7 +38,8 @@ function preload() {
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
 
-    //this.load.audio("pular, assets/pular.mp3"); quando tento adicionar esse comando, a tela fica preta. 
+    this.load.audio("pular", "assets/pular.mp3");
+
     this.load.spritesheet("dude", "assets/dino1.png", {
         frameWidth: 24,
         frameHeight: 24,
@@ -66,7 +67,7 @@ function create() {
     gate = this.physics.add.sprite(736, 120, "gate");
 
     this.anims.create({
-        key: "left",
+        //key: "left",
         frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
@@ -80,11 +81,13 @@ function create() {
     water3 = this.physics.add.sprite(572, 254, "water");
 
     this.anims.create({
-        //key: "left",
+        key: "prof",
         frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
         frameRate: 10,
         repeat: -1,
     });
+
+    this.anims.play("prof");
 
 
 
