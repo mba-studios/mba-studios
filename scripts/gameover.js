@@ -18,9 +18,9 @@ home.addEventListener("click", function () {
 
 import { cena1 } from "../scripts/index.js";
 
-var cena2 = new Phaser.Scene("Cena 2");
+var cena3 = new Phaser.Scene("Cena 3");
 
-cena2.preload = function () {
+cena3.preload = function () {
     // Imagem de fundo
     this.load.image("perdeu", "../assets/gameovertela.png");
 };
@@ -28,7 +28,7 @@ cena2.preload = function () {
 iniciar.on(
     "pointerdown",
     function () {
-        this.scene.start(cena1);
+        this.scene.start(cena0);
     },
     this
 );
@@ -42,7 +42,7 @@ home.on(
 );
 
 
-cena2.update = function () { };
+cena3.update = function () { };
 
 // Exportar a cena
-export { cena2 };
+export { cena3 };

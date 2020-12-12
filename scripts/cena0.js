@@ -8,7 +8,7 @@ play.addEventListener("click", function () {
 
 //---------------------------//
 
-import { cena1 } from "../scripts/index.js";
+import { cena3 } from "../scripts/index.js";
 
 var cena0 = new Phaser.Scene("Cena 0");
 
@@ -19,7 +19,7 @@ cena0.preload = function () {
     play.on(
         "pointerdown",
         function () {
-            this.scene.start(cena1);
+            this.scene.start(cena3);
         },
         this
     );
