@@ -11,6 +11,7 @@ var water;
 var water2;
 var water3;
 var gate;
+var trilha;
 
 var cena1 = new Phaser.Scene("Cena 1");
 
@@ -23,6 +24,8 @@ cena1.preload = function () {
     this.load.image("star", "../assets/star.png");
     this.load.image("bomb", "../assets/bomb.png");
 
+
+    this.load.audio("musica", "../assets/musica0.mp3");
     this.load.audio("pular", "../assets/pular.mp3");
 
     this.load.spritesheet("dude", "../assets/dino1.png", {
@@ -46,6 +49,12 @@ cena1.preload = function () {
 };
 
 cena1.create = function () {
+
+    //trilha = this.sound.add("musica"); comentar com o professor =======================
+
+
+    //trilha.play();
+
     this.add.image(400, 300, "sky");
 
     gate = this.physics.add.sprite(736, 120, "gate");
