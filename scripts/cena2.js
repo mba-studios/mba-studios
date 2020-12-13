@@ -1,3 +1,4 @@
+import { cena3 } from "./gameover.js";
 var player;
 var player2;
 var stars;
