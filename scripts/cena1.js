@@ -259,8 +259,17 @@ cena1.create = function () {
             if (player2.body.touching.down == 1) {
                 player2.setVelocityY(-300);
 
+
                 //pular.play(); ver com o professor ---------------------------------------------
             }
+        },
+        this
+    );
+
+    this.input.keyboard.on(
+        "keydown_X",
+        function () {
+            this.scene.start(cena2);
         },
         this
     );
