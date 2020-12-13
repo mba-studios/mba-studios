@@ -1,4 +1,4 @@
-import { cena3 } from "./gameover.js";
+import { cena1 } from "./cena1.js";
 
 var cena0 = new Phaser.Scene("Cena 0");
 
@@ -12,7 +12,7 @@ cena0.create = function () {
     button.on(
         "pointerdown",
         function () {
-            this.scene.start(cena3);
+            this.scene.start(cena1);
         },
         this
     );
