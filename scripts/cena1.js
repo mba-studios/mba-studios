@@ -23,7 +23,7 @@ cena1.preload = function () {
     this.load.image("star", "../assets/star.png");
     this.load.image("bomb", "../assets/bomb.png");
 
-    //this.load.audio("pular", "../assets/pular.mp3");
+    this.load.audio("pular", "../assets/pular.mp3");
 
     this.load.spritesheet("dude", "../assets/dino1.png", {
         frameWidth: 24,
@@ -260,7 +260,7 @@ cena1.create = function () {
                 player2.setVelocityY(-300);
 
 
-                //pular.play(); ver com o professor ---------------------------------------------
+                pular.play(); //ver com o professor ---------------------------------------------
             }
         },
         this
