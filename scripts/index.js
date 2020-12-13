@@ -4,17 +4,17 @@ import { cena2 } from "./cena2.js";
 import { cena3 } from "./gameover.js";
 
 const config = {
-  type: Phaser.AUTO,
-  width: 800,
-  height: 600,
-  parent: "game-container",
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 300 },
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    parent: "game-container",
+    physics: {
+        default: "arcade",
+        arcade: {
+            gravity: { y: 300 },
+        },
     },
-  },
-  scene: [cena0, cena1, cena2, cena3],
+    scene: [cena0, cena1, cena2, cena3],
 };
 
 const game = new Phaser.Game(config);
