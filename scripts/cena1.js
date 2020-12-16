@@ -280,7 +280,7 @@ cena1.create = function () {
     this.input.keyboard.on(
         "keydown_X",
         function () {
-            trilha.stop();
+            //trilha.stop(); botão para de funcionar
             this.scene.start(cena2);
         },
         this
