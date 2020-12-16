@@ -12,6 +12,7 @@ var water2;
 var water3;
 var gate;
 var trilha;
+var pular;
 
 var cena1 = new Phaser.Scene("Cena 1");
 
@@ -50,10 +51,11 @@ cena1.preload = function () {
 
 cena1.create = function () {
 
-    //trilha = this.sound.add("musica"); comentar com o professor =======================
-
-
+    //trilha = this.sound.add("musica"); // (comentar com o professor, demora muito pra carregar, deixei desabilitado)
     //trilha.play();
+
+    //pular = this.sound.add("pular"); // (comentar com o professor, demora muito pra carregar, deixei desabilitado)
+
 
     this.add.image(400, 300, "sky");
 
@@ -269,7 +271,7 @@ cena1.create = function () {
                 player2.setVelocityY(-300);
 
 
-                pular.play(); //ver com o professor ---------------------------------------------
+                pular.play(); //ver com o professor, tela fica preta
             }
         },
         this
@@ -278,6 +280,7 @@ cena1.create = function () {
     this.input.keyboard.on(
         "keydown_X",
         function () {
+            trilha.stop();
             this.scene.start(cena2);
         },
         this
@@ -302,7 +305,7 @@ cena1.update = function () {
     if (cursors.up.isDown && player.body.touching.down) {
         player.setVelocityY(-300);
 
-        //pular.play(); ver com o professor ---------------------------------------------
+        //pular.play(); ver com o professor tela fica preta
     }
 };
 
