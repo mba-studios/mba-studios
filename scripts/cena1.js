@@ -10,6 +10,11 @@ var water3;
 var gate;
 var trilha;
 var pular;
+var life = 0;
+var lifeText;
+var timedEvent;
+var timer;
+var timerText;
 
 
 
@@ -46,6 +51,21 @@ cena1.preload = function () {
         frameWidth: 64,
         frameHeight: 64,
     });
+
+    // Mostra há quanto tempo estão jogando (a vida dos jogadores)
+    lifeText = this.add.text(20, 24, life, {
+        fontSize: "32px",
+        fill: "#cccccc",
+    });
+    lifeText.setScrollFactor(0);
+
+    // Mostra na tela o contador
+    timerText = this.add.text(16, 16, timer, {
+        fontSize: "32px",
+        fill: "#000",
+        fill: "#000000",
+    });
+    timerText.setScrollFactor(0);
 
 };
 
@@ -290,6 +310,18 @@ cena1.update = function () {
         //pular.play(); ver com o professor tela fica preta
     }
 };
-
+function countdown() {
+    // Adiciona o tempo de vida em 1 segundo
+    life += 1;
+    lifeText.setText(life);
+    // Reduz o contador em 1 segundo
+    timer -= 1;
+    timerText.setText(timer);
+    // Se o contador chegar a zero, inicia a cena 2
+    if (timer === 0) {
+        trilha.stop();
+        this.scene.start(cena2);
+    }
+}
 
 export { cena1 };
