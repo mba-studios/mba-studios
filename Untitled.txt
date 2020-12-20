@@ -1,1 +1,14 @@
-testeeee
+function countdown() {
+  // Adiciona o tempo de vida em 1 segundo
+  life += 1;
+  lifeText.setText(life);
+
+  // Reduz o contador em 1 segundo
+  timer -= 1;
+  timerText.setText(timer);
+  // Se o contador chegar a zero, inicia a cena 2
+  if (timer === 0) {
+    trilha.stop();
+    this.scene.start(cena2);
+  }
+}
