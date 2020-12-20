@@ -2,17 +2,15 @@ import { cena2 } from "./cena2.js";
 
 var player;
 var player2;
-var stars;
 var platforms;
 var cursors;
-var score = 0;
-var scoreText;
 var water;
 var water2;
 var water3;
 var gate;
 var trilha;
 var pular;
+
 
 
 var cena1 = new Phaser.Scene("Cena 1");
@@ -23,7 +21,7 @@ cena1.preload = function () {
     this.load.image("ground", "../assets/plataformagelo.png");
     this.load.image("wall", "../assets/plataformagelovertical.png");
     this.load.image("slab", "../assets/plataformagelohorizontalmeiobloco.png");
-    this.load.image("star", "../assets/star.png");
+
     this.load.image("bomb", "../assets/bomb.png");
 
 
@@ -203,32 +201,14 @@ cena1.create = function () {
 
     cursors = this.input.keyboard.createCursorKeys();
 
-    stars = this.physics.add.group({
-        key: "star",
-        repeat: 11,
-        setXY: {
-            x: 64,
-            y: 350,
-
-            x: 128,
-            y: 400,
-        },
-    });
-
-    scoreText = this.add.text(16, 16, "score: 0", {
-        fontSize: "32px",
-        fill: "#000",
-    });
 
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(water, platforms);
     this.physics.add.collider(water2, platforms);
     this.physics.add.collider(water3, platforms);
     this.physics.add.collider(gate, platforms);
-    this.physics.add.collider(stars, platforms);
-    this.physics.add.overlap(player, stars, collectStar, null, this);
     this.physics.add.collider(player2, platforms);
-    this.physics.add.overlap(player2, stars, collectStar, null, this);
+
 
     this.input.keyboard.on(
         "keydown_A",
@@ -311,11 +291,5 @@ cena1.update = function () {
     }
 };
 
-function collectStar(player, star) {
-    star.disableBody(true, true);
-
-    score += 10;
-    scoreText.setText("Score: " + score);
-}
 
 export { cena1 };
