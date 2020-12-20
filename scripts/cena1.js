@@ -67,6 +67,12 @@ cena1.preload = function () {
     });
     timerText.setScrollFactor(0);
 
+    // Tela cheia
+    this.load.spritesheet("fullscreen", "../assets/fullscreen.png", {
+        frameWidth: 64,
+        frameHeight: 64,
+    });
+
 };
 
 cena1.create = function () {
@@ -287,6 +293,46 @@ cena1.create = function () {
         },
         this
     );
+
+    // Botão de ativar/desativar tela cheia
+    var button = this.add
+        .image(800 - 16, 16, "fullscreen", 0)
+        .setOrigin(1, 0)
+        .setInteractive()
+        .setScrollFactor(0);
+
+    // Ao clicar no botão de tela cheia
+    button.on(
+        "pointerup",
+        function () {
+            if (this.scale.isFullscreen) {
+                button.setFrame(0);
+                this.scale.stopFullscreen();
+            } else {
+                button.setFrame(1);
+                this.scale.startFullscreen();
+            }
+        },
+        this
+    );
+
+    // Tecla "F" também ativa/desativa tela cheia
+    var FKey = this.input.keyboard.addKey("F");
+    FKey.on(
+        "down",
+        function () {
+            if (this.scale.isFullscreen) {
+                button.setFrame(0);
+                this.scale.stopFullscreen();
+            } else {
+                button.setFrame(1);
+                this.scale.startFullscreen();
+            }
+        },
+        this
+    );
+
+
 };
 
 cena1.update = function () {
