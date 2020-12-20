@@ -14,6 +14,7 @@ var gate;
 var trilha;
 var pular;
 
+
 var cena1 = new Phaser.Scene("Cena 1");
 
 
@@ -26,8 +27,8 @@ cena1.preload = function () {
     this.load.image("bomb", "../assets/bomb.png");
 
 
-    this.load.audio("musica", "../assets/musica0.mp3");
-    this.load.audio("pular", "../assets/pular.mp3");
+    //this.load.audio("musica", "../assets/musica0.mp3");
+    //this.load.audio("pular", "../assets/pular.mp3");
 
     this.load.spritesheet("dude", "../assets/dino1.png", {
         frameWidth: 24,
@@ -47,6 +48,7 @@ cena1.preload = function () {
         frameWidth: 64,
         frameHeight: 64,
     });
+
 };
 
 cena1.create = function () {
@@ -271,7 +273,7 @@ cena1.create = function () {
                 player2.setVelocityY(-300);
 
 
-                pular.play(); //ver com o professor, tela fica preta
+                //pular.play(); //ver com o professor, tela fica preta
             }
         },
         this

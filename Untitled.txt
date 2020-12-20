@@ -1,3 +1,6 @@
+var life = 0;
+var lifeText;
+
 function countdown() {
   // Adiciona o tempo de vida em 1 segundo
   life += 1;
@@ -12,3 +15,15 @@ function countdown() {
     this.scene.start(cena2);
   }
 }
+
+lifeText = this.add.text(20, 24, life, {
+        fontSize: "32px",
+        fill: "#cccccc",
+    });
+    lifeText.setScrollFactor(0);
+    timerText = this.add.text(16, 16, timer, {
+        fontSize: "32px",
+        fill: "#000",
+        fill: "#000000",
+    });
+    timerText.setScrollFactor(0);
