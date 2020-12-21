@@ -29,9 +29,8 @@ cena1.preload = function () {
 
     this.load.image("bomb", "../assets/bomb.png");
 
-
-    //this.load.audio("musica", "../assets/musica0.mp3");
-    //this.load.audio("pular", "../assets/pular.mp3");
+this.load.audio("musica", "../assets/musica0.mp3");
+    this.load.audio("pular", "../assets/pular.mp3");
 
     this.load.spritesheet("dude", "../assets/dino1.png", {
         frameWidth: 24,
@@ -52,20 +51,7 @@ cena1.preload = function () {
         frameHeight: 64,
     });
 
-    // Mostra há quanto tempo estão jogando (a vida dos jogadores)
-    lifeText = this.add.text(20, 24, life, {
-        fontSize: "32px",
-        fill: "#cccccc",
-    });
-    lifeText.setScrollFactor(0);
-
-    // Mostra na tela o contador
-    timerText = this.add.text(16, 16, timer, {
-        fontSize: "32px",
-        fill: "#000",
-        fill: "#000000",
-    });
-    timerText.setScrollFactor(0);
+    
 
     // Tela cheia
     this.load.spritesheet("fullscreen", "../assets/fullscreen.png", {
@@ -77,10 +63,10 @@ cena1.preload = function () {
 
 cena1.create = function () {
 
-    //trilha = this.sound.add("musica"); // (comentar com o professor, demora muito pra carregar, deixei desabilitado)
-    //trilha.play();
+    trilha = this.sound.add("musica"); // (comentar com o professor, demora muito pra carregar, deixei desabilitado)
+    trilha.play();
 
-    //pular = this.sound.add("pular"); // (comentar com o professor, demora muito pra carregar, deixei desabilitado)
+    pular = this.sound.add("pular"); // (comentar com o professor, demora muito pra carregar, deixei desabilitado)
 
 
     this.add.image(400, 300, "sky");
@@ -279,7 +265,7 @@ cena1.create = function () {
                 player2.setVelocityY(-300);
 
 
-                //pular.play(); //ver com o professor, tela fica preta
+                pular.play(); //ver com o professor, tela fica preta
             }
         },
         this
@@ -288,7 +274,7 @@ cena1.create = function () {
     this.input.keyboard.on(
         "keydown_X",
         function () {
-            //trilha.stop(); botão para de funcionar
+            trilha.stop(); //botão para de funcionar
             this.scene.start(cena2);
         },
         this
@@ -331,7 +317,20 @@ cena1.create = function () {
         },
         this
     );
+    
+   lifeText = this.add.text(20, 24, life, {
+        fontSize: "32px",
+        fill: "#cccccc",
+    });
+    lifeText.setScrollFactor(0);
 
+    // Mostra na tela o contador
+    timerText = this.add.text(16, 16, timer, {
+        fontSize: "32px",
+        fill: "#000",
+        fill: "#000000",
+    });
+    timerText.setScrollFactor(0);
 
 };
 
@@ -353,8 +352,9 @@ cena1.update = function () {
     if (cursors.up.isDown && player.body.touching.down) {
         player.setVelocityY(-300);
 
-        //pular.play(); ver com o professor tela fica preta
+       pular.play(); //ver com o professor tela fica preta
     }
+
 };
 function countdown() {
     // Adiciona o tempo de vida em 1 segundo
@@ -368,6 +368,8 @@ function countdown() {
         trilha.stop();
         this.scene.start(cena2);
     }
+
+
 }
 
 export { cena1 };
