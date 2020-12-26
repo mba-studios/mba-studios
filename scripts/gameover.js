@@ -18,6 +18,11 @@ cena3.preload = function () {
 
     // [Arthur] Adicionando imagem de fundo 
     this.load.image("perdeu", "../assets/gameovertela.png");
+
+    this.load.spritesheet("fullscreen", "../assets/fullscreen.png", {
+        frameWidth: 64,
+        frameHeight: 64,
+    });
 };
 
 
@@ -30,6 +35,43 @@ cena3.create = function () {
         // [Arthur] Ao executar a função abaixo, a cena atual inicia o jogo novamente. 
         function () {
             this.scene.start(cena0);
+        },
+        this
+    );
+
+    // [Arthur] Adicionando a função de ligar / desligar a tela cheia. 
+    var button = this.add
+        .image(800 - 16, 16, "fullscreen", 0)
+        .setOrigin(1, 0)
+        .setInteractive()
+        .setScrollFactor(0);
+    button.on(
+        "pointerup",
+        function () {
+            if (this.scale.isFullscreen) {
+                button.setFrame(0);
+                this.scale.stopFullscreen();
+            } else {
+                button.setFrame(1);
+                this.scale.startFullscreen();
+            }
+        },
+        this
+    );
+
+
+    // [Arthur] Adiconando a função de tela cheia a partir da tecla F. 
+    var FKey = this.input.keyboard.addKey("F");
+    FKey.on(
+        "down",
+        function () {
+            if (this.scale.isFullscreen) {
+                button.setFrame(0);
+                this.scale.stopFullscreen();
+            } else {
+                button.setFrame(1);
+                this.scale.startFullscreen();
+            }
         },
         this
     );
