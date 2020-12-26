@@ -16,6 +16,8 @@ var cursors;
 var water;
 var water2;
 var water3;
+var water4;
+var water5;
 var gate;
 var trilha;
 var pular;
@@ -87,7 +89,7 @@ cena2.create = function () {
 
 
     // [Arthur] Incluido a sprite do portal a cena e em seguida, criando a animação. 
-    gate = this.physics.add.sprite(736, 120, "gate");
+    gate = this.physics.add.sprite(736, 530, "gate");
     this.anims.create({
         key: "gateon",
         frames: this.anims.generateFrameNumbers("gate", { start: 1, end: 4 }),
@@ -125,6 +127,27 @@ cena2.create = function () {
         repeat: -1,
     });
     water3.anims.play("wateron");
+
+    // [Arthur] Incluindo a sprite de água a cena e em seguinda, criando a animação. 
+    water4 = this.physics.add.sprite(512, 382, "water");
+    this.anims.create({
+        key: "wateron",
+        frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
+        frameRate: 10,
+        repeat: -1,
+    });
+    water4.anims.play("wateron");
+
+    // [Arthur] Incluindo a sprite de água a cena e em seguinda, criando a animação. 
+    water5 = this.physics.add.sprite(352, 254, "water");
+    this.anims.create({
+        key: "wateron",
+        frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
+        frameRate: 10,
+        repeat: -1,
+    });
+    water5.anims.play("wateron");
+
 
     // ================================================
     // [Arthur] Incluindo o grupo de plataformas a cena, grupo definido como estático. 
@@ -165,7 +188,7 @@ cena2.create = function () {
 
 
     // [Arthur] Incluindo grupo de plataformas do 3º andar. 
-    platforms.create(32, 294, "ground");
+    //platforms.create(32, 294, "ground");
 
 
     // [Arthur] Incluindo grupo de plataformas do 4º andar. 
@@ -265,6 +288,8 @@ cena2.create = function () {
     this.physics.add.collider(water, platforms);
     this.physics.add.collider(water2, platforms);
     this.physics.add.collider(water3, platforms);
+    this.physics.add.collider(water4, platforms);
+    this.physics.add.collider(water5, platforms);
     this.physics.add.collider(gate, platforms);
 
 
