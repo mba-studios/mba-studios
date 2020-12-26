@@ -187,10 +187,6 @@ cena2.create = function () {
     platforms.create(384, 390, "ground");
 
 
-    // [Arthur] Incluindo grupo de plataformas do 3º andar. 
-    //platforms.create(32, 294, "ground");
-
-
     // [Arthur] Incluindo grupo de plataformas do 4º andar. 
     platforms.create(96, 262, "ground");
     platforms.create(224, 262, "ground");
@@ -205,7 +201,6 @@ cena2.create = function () {
     platforms.create(224, 166, "ground");
     platforms.create(480, 166, "ground");
     platforms.create(544, 166, "ground");
-
 
 
     // [Arthur] Incluindo grupo de plataformas da parede esquerda. 
@@ -227,7 +222,7 @@ cena2.create = function () {
     // [Arthur] Incluindo grupo de sprites a cena. 
 
     // [Arthur] Incluindo sprites do player Nº 1. 
-    player = this.physics.add.sprite(128, 500, "dude");
+    player = this.physics.add.sprite(64, 130, "dude");
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
@@ -253,7 +248,7 @@ cena2.create = function () {
 
 
     // [Arthur] Incluindo sprites do player Nº 1. 
-    player2 = this.physics.add.sprite(128, 400, "dude2");
+    player2 = this.physics.add.sprite(96, 130, "dude2");
     player2.setBounce(0.2);
     player2.setCollideWorldBounds(true);
 
