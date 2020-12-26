@@ -410,5 +410,5 @@ function countdown() {
         this.scene.start(cena2);
     }
 }
-// [Arthur] Exportando cena 2 para o index.js.
+// [Arthur] Exportando cena 1 para o index.js.
 export { cena1 };
