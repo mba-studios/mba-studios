@@ -182,19 +182,19 @@ cena1.create = function () {
 
 
     // [Arthur] Incluindo grupo de plataformas da parede esquerda. 
-    platforms.create(16, 536, "wall");
-    platforms.create(16, 408, "wall");
-    platforms.create(16, 280, "wall");
-    platforms.create(16, 152, "wall");
-    platforms.create(16, 24, "wall");
+    platforms.create(16, 534, "wall");
+    platforms.create(16, 406, "wall");
+    platforms.create(16, 278, "wall");
+    platforms.create(16, 150, "wall");
+    platforms.create(16, 22, "wall");
 
 
     // [Arthur] Incluindo grupo de plataformas da parede direita. 
-    platforms.create(784, 536, "wall");
-    platforms.create(784, 408, "wall");
-    platforms.create(784, 280, "wall");
-    platforms.create(784, 152, "wall");
-    platforms.create(784, 24, "wall");
+    platforms.create(784, 534, "wall");
+    platforms.create(784, 406, "wall");
+    platforms.create(784, 278, "wall");
+    platforms.create(784, 150, "wall");
+    platforms.create(784, 22, "wall");
 
     // ================================================
     // [Arthur] Incluindo grupo de sprites a cena. 

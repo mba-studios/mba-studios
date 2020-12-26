@@ -2,7 +2,7 @@
 File: cena0.js
 Author: Arthur Cadore(IFSC)
 Date: 26 / 12 / 2020
-Brief: inital import archive. 
+Brief: first import archive. 
 */
 
 // [Arthur] importando a cena seguinte do arquivo "cena1.js"

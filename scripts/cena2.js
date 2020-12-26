@@ -97,7 +97,7 @@ cena2.create = function () {
     gate.anims.play("gateon");
 
     // [Arthur] Incluindo a sprite de água a cena e em seguinda, criando a animação. 
-    water = this.physics.add.sprite(222, 382, "water");
+    water = this.physics.add.sprite(512, 574, "water");
     this.anims.create({
         key: "wateron",
         frames: this.anims.generateFrameNumbers("water", { start: 1, end: 4 }),
@@ -107,7 +107,7 @@ cena2.create = function () {
     water.anims.play("wateron");
 
     // [Arthur] Incluindo a sprite de água a cena e em seguinda, criando a animação.
-    water2 = this.physics.add.sprite(382, 574, "water");
+    water2 = this.physics.add.sprite(384, 574, "water");
     this.anims.create({
         key: "wateron",
         frames: this.anims.generateFrameNumbers("water2", { start: 1, end: 4 }),
@@ -117,7 +117,7 @@ cena2.create = function () {
     water2.anims.play("wateron");
 
     // [Arthur] Incluindo a sprite de água a cena e em seguinda, criando a animação.
-    water3 = this.physics.add.sprite(572, 254, "water");
+    water3 = this.physics.add.sprite(256, 574, "water");
     this.anims.create({
         key: "wateron",
         frames: this.anims.generateFrameNumbers("water3", { start: 1, end: 4 }),
@@ -132,11 +132,11 @@ cena2.create = function () {
     platforms = this.physics.add.staticGroup();
 
     // [Arthur] Incluindo grupo de plataformas do piso. 
-    platforms.create(64, 582, "ground");
-    platforms.create(256, 582, "ground");
-    platforms.create(192, 582, "ground");
+    platforms.create(256, 590, "slab");
     platforms.create(384, 590, "slab");
-    platforms.create(512, 582, "ground");
+    platforms.create(512, 590, "slab");
+    platforms.create(64, 582, "ground");
+    platforms.create(128, 582, "ground");
     platforms.create(640, 582, "ground");
     platforms.create(768, 582, "ground");
 
@@ -153,16 +153,15 @@ cena2.create = function () {
 
     // [Arthur] Incluindo grupo de plataformas do 1º andar. 
     platforms.create(96, 486, "ground");
-    platforms.create(224, 486, "ground");
-    platforms.create(704, 486, "ground");
+    platforms.create(384, 486, "ground");
+    platforms.create(768, 486, "ground");
 
 
     // [Arthur] Incluindo grupo de plataformas do 2º andar. 
-    platforms.create(96, 390, "ground");
-    platforms.create(224, 398, "slab");
-    platforms.create(352, 390, "ground");
-    platforms.create(480, 390, "ground");
-    platforms.create(544, 390, "ground");
+    platforms.create(768, 390, "ground");
+    platforms.create(640, 390, "ground");
+    platforms.create(512, 398, "slab");
+    platforms.create(384, 390, "ground");
 
 
     // [Arthur] Incluindo grupo de plataformas do 3º andar. 
@@ -170,31 +169,36 @@ cena2.create = function () {
 
 
     // [Arthur] Incluindo grupo de plataformas do 4º andar. 
-    platforms.create(704, 262, "ground");
-    platforms.create(576, 270, "slab");
-    platforms.create(448, 262, "ground");
-    platforms.create(352, 230, "ground");
-    platforms.create(224, 230, "ground");
+    platforms.create(96, 262, "ground");
+    platforms.create(224, 262, "ground");
+    platforms.create(352, 270, "slab");
+    platforms.create(480, 262, "ground");
+    platforms.create(544, 262, "ground");
+    platforms.create(592, 214, "wall");
 
 
     // [Arthur] Incluindo grupo de plataformas do 5º andar. 
-    platforms.create(704, 166, "ground");
+    platforms.create(96, 166, "ground");
+    platforms.create(224, 166, "ground");
+    platforms.create(480, 166, "ground");
+    platforms.create(544, 166, "ground");
+
 
 
     // [Arthur] Incluindo grupo de plataformas da parede esquerda. 
-    platforms.create(16, 536, "wall");
-    platforms.create(16, 408, "wall");
-    platforms.create(16, 280, "wall");
-    platforms.create(16, 152, "wall");
-    platforms.create(16, 24, "wall");
+    platforms.create(16, 534, "wall");
+    platforms.create(16, 406, "wall");
+    platforms.create(16, 278, "wall");
+    platforms.create(16, 150, "wall");
+    platforms.create(16, 22, "wall");
 
 
     // [Arthur] Incluindo grupo de plataformas da parede direita. 
-    platforms.create(784, 536, "wall");
-    platforms.create(784, 408, "wall");
-    platforms.create(784, 280, "wall");
-    platforms.create(784, 152, "wall");
-    platforms.create(784, 24, "wall");
+    platforms.create(784, 534, "wall");
+    platforms.create(784, 406, "wall");
+    platforms.create(784, 278, "wall");
+    platforms.create(784, 150, "wall");
+    platforms.create(784, 22, "wall");
 
     // ================================================
     // [Arthur] Incluindo grupo de sprites a cena. 
