@@ -27,3 +27,56 @@ lifeText = this.add.text(20, 24, life, {
         fill: "#000000",
     });
     timerText.setScrollFactor(0);
+
+
+
+platforms.create(64, 582, "ground");
+    platforms.create(256, 590, "slab");
+    platforms.create(128, 582, "ground");
+    platforms.create(384, 590, "slab");
+    platforms.create(512, 590, "slab");
+    platforms.create(640, 582, "ground");
+    platforms.create(768, 582, "ground");
+
+    platforms.create(64, 18, "ground");
+    platforms.create(256, 18, "ground");
+    platforms.create(192, 18, "ground");
+    platforms.create(384, 18, "ground");
+    platforms.create(512, 18, "ground");
+    platforms.create(640, 18, "ground");
+    platforms.create(768, 18, "ground");
+
+    platforms.create(96, 166, "ground");
+    platforms.create(224, 166, "ground");
+
+    platforms.create(480, 166, "ground");
+    platforms.create(544, 166, "ground");
+
+    platforms.create(96, 262, "ground");
+    platforms.create(224, 262, "ground");
+    platforms.create(352, 270, "slab");
+    platforms.create(480, 262, "ground");
+    platforms.create(544, 262, "ground");
+
+    platforms.create(592, 214, "wall");
+
+    platforms.create(768, 390, "ground");
+    platforms.create(640, 390, "ground");
+    platforms.create(512, 398, "slab");
+    platforms.create(384, 390, "ground");
+
+    platforms.create(96, 486, "ground");
+    platforms.create(384, 486, "ground");
+    platforms.create(768, 486, "ground");
+
+    platforms.create(16, 536, "wall");
+    platforms.create(16, 408, "wall");
+    platforms.create(16, 280, "wall");
+    platforms.create(16, 152, "wall");
+    platforms.create(16, 24, "wall");
+
+    platforms.create(784, 536, "wall");
+    platforms.create(784, 408, "wall");
+    platforms.create(784, 280, "wall");
+    platforms.create(784, 152, "wall");
+    platforms.create(784, 24, "wall");
