@@ -1,5 +1,5 @@
 /*
-File: cena0.html
+File: cena0.js
 Author: Arthur Cadore(IFSC)
 Date: 26 / 12 / 2020
 Brief: inital import archive. 
@@ -19,8 +19,8 @@ cena0.preload = function () {
     this.load.image("cadeado", "../assets/tela-de-inicio-td.png");
 };
 
-// [Arthur] Criando função para executar o comando de troca de cena. 
 
+// [Arthur] Criando função para executar o comando de troca de cena. 
 cena0.create = function () {
     var button = this.add.image(400, 300, "cadeado", 0).setInteractive();
     button.on(
