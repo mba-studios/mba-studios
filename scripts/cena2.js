@@ -187,7 +187,7 @@ cena2.create = function () {
     platforms.create(384, 390, "ground");
 
 
-    // [Arthur] Incluindo grupo de plataformas do 4º andar. 
+    // [Arthur] Incluindo grupo de plataformas do 3º andar. 
     platforms.create(96, 262, "ground");
     platforms.create(224, 262, "ground");
     platforms.create(352, 270, "slab");
@@ -196,7 +196,7 @@ cena2.create = function () {
     platforms.create(592, 214, "wall");
 
 
-    // [Arthur] Incluindo grupo de plataformas do 5º andar. 
+    // [Arthur] Incluindo grupo de plataformas do 4º andar. 
     platforms.create(96, 166, "ground");
     platforms.create(224, 166, "ground");
     platforms.create(480, 166, "ground");
