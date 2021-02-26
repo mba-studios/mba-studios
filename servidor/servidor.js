@@ -2,5 +2,5 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static("../index.html"));
+app.use(express.static("../scripts"));
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}!`));
