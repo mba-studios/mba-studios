@@ -16,9 +16,9 @@ var cena0 = new Phaser.Scene("Cena 0");
 cena0.preload = function () {
 
     // [Arthur] Adicionando imagem de fundo 
-    this.load.image("cadeado", "../assets/tela-de-inicio-td.png");
+    this.load.image("cadeado", "./assets/tela-de-inicio-td.png");
 
-    this.load.spritesheet("fullscreen", "../assets/fullscreen.png", {
+    this.load.spritesheet("fullscreen", "./assets/fullscreen.png", {
         frameWidth: 64,
         frameHeight: 64,
     });

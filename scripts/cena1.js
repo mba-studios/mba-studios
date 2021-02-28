@@ -31,38 +31,38 @@ var cena1 = new Phaser.Scene("Cena 1");
 cena1.preload = function () {
 
     // [Arthur] Carregando imagens para a cena.
-    this.load.image("sky", "../assets/plano de fundo.png");
-    this.load.image("ground", "../assets/plataformagelo.png");
-    this.load.image("wall", "../assets/plataformagelovertical.png");
-    this.load.image("slab", "../assets/plataformagelohorizontalmeiobloco.png");
-    this.load.image("bomb", "../assets/bomb.png");
+    this.load.image("sky", "./assets/plano de fundo.png");
+    this.load.image("ground", "./assets/plataformagelo.png");
+    this.load.image("wall", "./assets/plataformagelovertical.png");
+    this.load.image("slab", "./assets/plataformagelohorizontalmeiobloco.png");
+
 
 
 
     // [Arthur] Carregando audios para a cena. 
-    this.load.audio("musica", "../assets/musica0.mp3");
-    this.load.audio("pular", "../assets/pular.mp3");
+    this.load.audio("musica", "./assets/musica0.mp3");
+    this.load.audio("pular", "./assets/pular.mp3");
 
 
 
     // [Arthur] Carregando sprites para a cena. 
-    this.load.spritesheet("dude", "../assets/dino1.png", {
+    this.load.spritesheet("dude", "./assets/dino1.png", {
         frameWidth: 24,
         frameHeight: 24,
     });
-    this.load.spritesheet("dude2", "../assets/dino1.png", {
+    this.load.spritesheet("dude2", "./assets/dino1.png", {
         frameWidth: 24,
         frameHeight: 24,
     });
-    this.load.spritesheet("water", "../assets/liquido.agua.png", {
+    this.load.spritesheet("water", "./assets/liquido.agua.png", {
         frameWidth: 128,
         frameHeight: 16,
     });
-    this.load.spritesheet("gate", "../assets/Portal.agua1.png", {
+    this.load.spritesheet("gate", "./assets/Portal.agua1.png", {
         frameWidth: 64,
         frameHeight: 64,
     });
-    this.load.spritesheet("fullscreen", "../assets/fullscreen.png", {
+    this.load.spritesheet("fullscreen", "./assets/fullscreen.png", {
         frameWidth: 64,
         frameHeight: 64,
     });

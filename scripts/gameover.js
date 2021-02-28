@@ -17,9 +17,9 @@ var cena3 = new Phaser.Scene("Cena 3");
 cena3.preload = function () {
 
     // [Arthur] Adicionando imagem de fundo 
-    this.load.image("perdeu", "../assets/gameovertela.png");
+    this.load.image("perdeu", "./assets/gameovertela.png");
 
-    this.load.spritesheet("fullscreen", "../assets/fullscreen.png", {
+    this.load.spritesheet("fullscreen", "./assets/fullscreen.png", {
         frameWidth: 64,
         frameHeight: 64,
     });
