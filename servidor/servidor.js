@@ -4,8 +4,8 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const PORT = process.env.PORT || 3000;
 var jogadores = {
-    primeiro: player,
-    segundo: player2,
+    primeiro: undefined,
+    segundo: undefined,
 };
 
 // Disparar evento quando jogador entrar na partida
