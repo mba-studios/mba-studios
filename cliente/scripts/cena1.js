@@ -372,6 +372,50 @@ cena1.create = function () {
     });
     timerText.setScrollFactor(0);
 
+    // Conectar no servidor via WebSocket
+    this.socket = io();
+
+    // Disparar evento quando jogador entrar na partida
+    var self = this;
+    var physics = this.physics;
+    var cameras = this.cameras;
+    var time = this.time;
+
+    this.socket.on("jogadores", function (jogadores) {
+        if (jogadores.primeiro === player) {
+            // Define jogador como o primeiro
+            jogador = 1;
+
+            /* Personagens colidem com os limites da cena
+            player1.setCollideWorldBounds(true);
+
+            // Detecção de colisão: terreno
+            physics.add.collider(player1, terreno, hitCave, null, this);
+
+            // Detecção de colisão e disparo de evento: ARCas
+            physics.add.collider(player1, ARCas, hitARCa, null, this);
+
+            // Câmera seguindo o personagem 1
+            cameras.main.startFollow(player1); */
+
+        } else if (jogadores.segundo === player2) {
+            // Define jogador como o segundo
+            jogador = 2;
+            /*
+           // Personagens colidem com os limites da cena
+           player2.setCollideWorldBounds(true);
+
+           // Detecção de colisão: terreno
+           physics.add.collider(player2, terreno, hitCave, null, this);
+
+           // Detecção de colisão e disparo de evento: ARCas
+           physics.add.collider(player2, ARCas, hitARCa, null, this);
+
+           // Câmera seguindo o personagem 2 */
+            cameras.main.startFollow(player2);
+        }
+    });
+
 };
 
 
