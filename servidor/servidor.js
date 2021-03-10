@@ -1,16 +1,41 @@
-/*
-File: cena0.js
-Author: Arthur Cadore(IFSC)
-Date: 28 / 02 / 2021 
-*/
-
-// [Arthur]
 const express = require("express");
 const app = express();
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
+const PORT = process.env.PORT || 3000;
+var jogadores = {
+    primeiro: player,
+    segundo: player2,
+};
 
-// [Arthur] Define o número da porta a utilizar para abrir o servidor 
-const PORT = process.env.PORT || 4000;
+// Disparar evento quando jogador entrar na partida
+io.on("connection", function (socket) {
+    if (jogadores.primeiro === player) {
+        jogadores.primeiro = socket.id;
+    } else if (
+        jogadores.segundo === player2
+    ) {
+        jogadores.segundo = socket.id;
+    }
+    io.emit("jogadores", jogadores);
+    console.log("+Lista de jogadores: %s", jogadores);
 
-// [Arthur] Define o diretório á ser importado 
+    // Disparar evento quando jogador sair da partida
+    socket.on("disconnect", function () {
+        if (jogadores.primeiro === socket.id) {
+            jogadores.primeiro = player;
+        }
+        if (jogadores.segundo === socket.id) {
+            jogadores.segundo = player2;
+        }
+        io.emit("jogadores", jogadores);
+        console.log("-Lista de jogadores: %s", jogadores);
+    });
+
+    socket.on("estadoDoJogador", function (estado) {
+        socket.broadcast.emit("desenharOutroJogador", estado)
+    })
+});
+
 app.use(express.static("../cliente"));
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}!`));
+server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`));
