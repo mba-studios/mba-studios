@@ -413,23 +413,6 @@ cena1.create = function () {
 // [Arthur] Iniciando a função update a cena, a função é executada em loop para algumas mecânicas da fase. 
 cena1.update = function () {
 
-    /*
-        // [Arthur] Incluindo as funções de movimentação do personagem Nº1. 
-        if (cursors.left.isDown) {
-            player.setVelocityX(-160);
-            player.anims.play("left", true);
-        } else if (cursors.right.isDown) {
-            player.setVelocityX(160);
-            player.anims.play("right", true);
-        } else {
-            player.setVelocityX(0);
-            player.anims.play("turn");
-        }
-        if (cursors.up.isDown && player.body.touching.down) {
-            player.setVelocityY(-300);
-            pular.play();
-        }
-    */
     if (jogador === 1) {
         if (cursors.left.isDown) {
             player1.body.setVelocityX(-100);
