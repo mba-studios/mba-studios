@@ -411,8 +411,8 @@ cena1.create = function () {
            // Detecção de colisão e disparo de evento: ARCas
            physics.add.collider(player2, ARCas, hitARCa, null, this);
 
-           // Câmera seguindo o personagem 2 */
-            cameras.main.startFollow(player2);
+           // Câmera seguindo o personagem 2 
+            cameras.main.startFollow(player2);*/
         }
     });
 
