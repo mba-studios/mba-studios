@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 var jogadores = {
     primeiro: undefined,
     segundo: undefined,
@@ -23,10 +23,10 @@ io.on("connection", function (socket) {
     // Disparar evento quando jogador sair da partida
     socket.on("disconnect", function () {
         if (jogadores.primeiro === socket.id) {
-            jogadores.primeiro = player;
+            jogadores.primeiro = undefined;
         }
         if (jogadores.segundo === socket.id) {
-            jogadores.segundo = player2;
+            jogadores.segundo = undefined;
         }
         io.emit("jogadores", jogadores);
         console.log("-Lista de jogadores: %s", jogadores);

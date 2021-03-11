@@ -9,7 +9,7 @@ Brief: second import archive.
 import { cena2 } from "./cena2.js";
 
 // [Arthur] Adicionando variáveis ao código para execução dos comandos. 
-var player;
+var player1;
 var player2;
 var platforms;
 var cursors;
@@ -24,6 +24,7 @@ var lifeText;
 var timedEvent;
 var timer;
 var timerText;
+var jogador;
 var cena1 = new Phaser.Scene("Cena 1");
 
 // ===============================================================================
@@ -200,9 +201,9 @@ cena1.create = function () {
     // [Arthur] Incluindo grupo de sprites a cena. 
 
     // [Arthur] Incluindo sprites do player Nº 1. 
-    player = this.physics.add.sprite(128, 500, "dude");
-    player.setBounce(0.2);
-    player.setCollideWorldBounds(true);
+    player1 = this.physics.add.sprite(128, 500, "dude");
+    player1.setBounce(0.2);
+    player1.setCollideWorldBounds(true);
 
 
     // [Arthur] Incluindo as funções de movimentação do personagem Nº1.
@@ -256,7 +257,7 @@ cena1.create = function () {
 
 
     // [Arthur] Adicionando sistema de colisão a fase. 
-    this.physics.add.collider(player, platforms);
+    this.physics.add.collider(player1, platforms);
     this.physics.add.collider(player2, platforms);
     this.physics.add.collider(water, platforms);
     this.physics.add.collider(water2, platforms);
@@ -382,40 +383,29 @@ cena1.create = function () {
     var time = this.time;
 
     this.socket.on("jogadores", function (jogadores) {
-        if (jogadores.primeiro === player) {
+        if (jogadores.primeiro === self.socket.id) {
             // Define jogador como o primeiro
             jogador = 1;
 
-            /* Personagens colidem com os limites da cena
-            player1.setCollideWorldBounds(true);
-
-            // Detecção de colisão: terreno
-            physics.add.collider(player1, terreno, hitCave, null, this);
-
-            // Detecção de colisão e disparo de evento: ARCas
-            physics.add.collider(player1, ARCas, hitARCa, null, this);
-
-            // Câmera seguindo o personagem 1
-            cameras.main.startFollow(player1); */
-
-        } else if (jogadores.segundo === player2) {
+        } else if (jogadores.segundo === self.socket.id) {
             // Define jogador como o segundo
             jogador = 2;
-            /*
-           // Personagens colidem com os limites da cena
-           player2.setCollideWorldBounds(true);
-
-           // Detecção de colisão: terreno
-           physics.add.collider(player2, terreno, hitCave, null, this);
-
-           // Detecção de colisão e disparo de evento: ARCas
-           physics.add.collider(player2, ARCas, hitARCa, null, this);
-
-           // Câmera seguindo o personagem 2 
-            cameras.main.startFollow(player2);*/
         }
+        console.log(jogadores)
     });
 
+    // Desenhar o outro jogador
+    this.socket.on("desenharOutroJogador", ({ frame, x, y }) => {
+        if (jogador === 1) {
+            player2.setFrame(frame);
+            player2.x = x;
+            player2.y = y;
+        } else if (jogador === 2) {
+            player1.setFrame(frame);
+            player1.x = x;
+            player1.y = y;
+        }
+    });
 };
 
 
@@ -423,36 +413,78 @@ cena1.create = function () {
 // [Arthur] Iniciando a função update a cena, a função é executada em loop para algumas mecânicas da fase. 
 cena1.update = function () {
 
-
-    // [Arthur] Incluindo as funções de movimentação do personagem Nº1. 
-    if (cursors.left.isDown) {
-        player.setVelocityX(-160);
-        player.anims.play("left", true);
-    } else if (cursors.right.isDown) {
-        player.setVelocityX(160);
-        player.anims.play("right", true);
-    } else {
-        player.setVelocityX(0);
-        player.anims.play("turn");
+    /*
+        // [Arthur] Incluindo as funções de movimentação do personagem Nº1. 
+        if (cursors.left.isDown) {
+            player.setVelocityX(-160);
+            player.anims.play("left", true);
+        } else if (cursors.right.isDown) {
+            player.setVelocityX(160);
+            player.anims.play("right", true);
+        } else {
+            player.setVelocityX(0);
+            player.anims.play("turn");
+        }
+        if (cursors.up.isDown && player.body.touching.down) {
+            player.setVelocityY(-300);
+            pular.play();
+        }
+    */
+    if (jogador === 1) {
+        if (cursors.left.isDown) {
+            player1.body.setVelocityX(-100);
+            player1.anims.play("left", true);
+        } else if (cursors.right.isDown) {
+            player1.body.setVelocityX(100);
+            player1.anims.play("right", true);
+        } else {
+            player1.body.setVelocity(0);
+            player1.anims.play("turn", true);
+        }
+        if (cursors.up.isDown && player1.body.touching.down) {
+            player1.body.setVelocityY(-100);
+        }
+        this.socket.emit("estadoDoJogador", {
+            frame: player1.anims.currentFrame.index,
+            x: player1.body.x,
+            y: player1.body.y,
+        });
     }
-    if (cursors.up.isDown && player.body.touching.down) {
-        player.setVelocityY(-300);
-        pular.play();
-    }
-};
+    else (jogador === 2); {
+        if (cursors.left.isDown) {
+            player2.body.setVelocityX(-100);
+            player2.anims.play("left2", true);
+        } else if (cursors.right.isDown) {
+            player2.body.setVelocityX(100);
+            player2.anims.play("right2", true);
+        } else {
+            player2.body.setVelocity(0);
+            player2.anims.play("turn2", true);
+        }
+        if (cursors.up.isDown && player2.body.touching.down) {
+            player2.body.setVelocityY(-100);
+
+            this.socket.emit("estadoDoJogador", {
+                frame: player2.anims.currentFrame.index,
+                x: player2.body.x,
+                y: player2.body.y,
+            });
+        }
+    };
 
 
-// ================================================
-// [Arthur] Iniciando a função contdown, para fazer a contagem do tempo da cena. 
-function countdown() {
-    life += 1;
-    lifeText.setText(life);
-    timer -= 1;
-    timerText.setText(timer);
-    if (timer === 0) {
-        trilha.stop();
-        this.scene.start(cena2);
+    // ================================================
+    // [Arthur] Iniciando a função contdown, para fazer a contagem do tempo da cena. 
+    function countdown() {
+        life += 1;
+        lifeText.setText(life);
+        timer -= 1;
+        timerText.setText(timer);
+        if (timer === 0) {
+            trilha.stop();
+            this.scene.start(cena2);
+        }
     }
 }
 // [Arthur] Exportando cena 1 para o index.js.
-export { cena1 };
+export { cena1 }
