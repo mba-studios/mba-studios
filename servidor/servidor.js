@@ -10,10 +10,10 @@ var jogadores = {
 
 // Disparar evento quando jogador entrar na partida
 io.on("connection", function (socket) {
-    if (jogadores.primeiro === player) {
+    if (jogadores.primeiro === undefined) {
         jogadores.primeiro = socket.id;
     } else if (
-        jogadores.segundo === player2
+        jogadores.segundo === undefined
     ) {
         jogadores.segundo = socket.id;
     }
