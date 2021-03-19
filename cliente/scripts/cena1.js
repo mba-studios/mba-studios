@@ -422,6 +422,47 @@ cena1.update = function () {
         });
     }
 
+     // [Bruna] Definindo função do game over.
+
+    function death(player1, water){
+            this.scene.start(cena3);
+
+    }
+    function death(player2, water){
+            this.scene.start(cena3);
+
+    }
+
+    function death(player1, water2){
+            this.scene.start(cena3);
+
+    }
+
+   function death(player2, water2){
+            this.scene.start(cena3);
+
+    }
+
+   function death(player1, water3){
+            this.scene.start(cena3);
+
+    }
+
+   function death(player2, water3){
+            this.scene.start(cena3);
+
+    }
+
+   
+
+    // [Bruna] Definindo colisão com a água.
+    physics.add.collider(player1, water, death, null, this);
+    physics.add.collider(player2, water, death, null, this);
+    physics.add.collider(player1, water2, death, null, this);
+    physics.add.collider(player2, water2, death, null, this);
+    physics.add.collider(player1, water3, death, null, this);
+    physics.add.collider(player2, water3, death, null, this);
+
     // ================================================
     // [Arthur] Iniciando a função contdown, para fazer a contagem do tempo da cena.
     function countdown() {
