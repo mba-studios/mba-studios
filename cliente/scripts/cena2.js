@@ -437,37 +437,37 @@ cena2.update = function () {
 
     }
 
-   function death(player2, water2){
+   function deathJ(player2, water2){
             this.scene.start(cena3);
 
     }
 
-   function deathJ(player, water3){
+   function deathK(player, water3){
             this.scene.start(cena3);
 
     }
 
-   function deathK(player2, water3){
+   function deathL(player2, water3){
             this.scene.start(cena3);
 
     }
 
-  function deathL(player, water4){
+  function deathM(player, water4){
             this.scene.start(cena3);
 
     }
 
-  function deathM(player2, water4){
+  function deathN(player2, water4){
             this.scene.start(cena3);
 
     }
 
-  function deathN(player, water5){
+  function deathO(player, water5){
             this.scene.start(cena3);
 
     }
 
-  function deathO(player2, water5){
+  function deathP(player2, water5){
             this.scene.start(cena3);
 
     }
@@ -480,11 +480,11 @@ this.physics.add.collider(player2, water, deathH);
 this.physics.add.collider(player, water2, deathI);
 this.physics.add.collider(player2, water2, deathJ);
 this.physics.add.collider(player, water3, deathK);
-this.physics.add.collider(player2, water3, death);
-this.physics.add.collider(player, water4, deathL);
-this.physics.add.collider(player2, water4, deathM);
-this.physics.add.collider(player, water5, deathN);
-this.physics.add.collider(player2, water5, deathO);
+this.physics.add.collider(player2, water3, deathL);
+this.physics.add.collider(player, water4, deathM);
+this.physics.add.collider(player2, water4, deathN);
+this.physics.add.collider(player, water5, deathO);
+this.physics.add.collider(player2, water5, deathP);
 
 
 // ================================================
