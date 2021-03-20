@@ -421,18 +421,18 @@ cena2.update = function () {
     }
 };
 
-// [Bruna] Definindo função do game over.
+  // [Bruna] Definindo função do game over.
 
-    function death(player, water){
+    function deathG(player, water){
             this.scene.start(cena3);
 
     }
-    function death(player2, water){
+    function deathH(player2, water){
             this.scene.start(cena3);
 
     }
 
-    function death(player, water2){
+    function deathI(player, water2){
             this.scene.start(cena3);
 
     }
@@ -442,49 +442,49 @@ cena2.update = function () {
 
     }
 
-   function death(player, water3){
+   function deathJ(player, water3){
             this.scene.start(cena3);
 
     }
 
-   function death(player2, water3){
+   function deathK(player2, water3){
             this.scene.start(cena3);
 
     }
 
-  function death(player, water4){
+  function deathL(player, water4){
             this.scene.start(cena3);
 
     }
 
-  function death(player2, water4){
+  function deathM(player2, water4){
             this.scene.start(cena3);
 
     }
 
-  function death(player, water5){
+  function deathN(player, water5){
             this.scene.start(cena3);
 
     }
 
-  function death(player2, water5){
+  function deathO(player2, water5){
             this.scene.start(cena3);
 
     }
 
 
 
-// [Bruna] Definindo colisão com a água.
-   physics.add.collider(player, water, death, null, this);
-   physics.add.collider(player2, water, death, null, this);
-   physics.add.collider(player, water2, death, null, this);
-   physics.add.collider(player2, water2, death, null, this);
-   physics.add.collider(player, water3, death, null, this);
-   physics.add.collider(player2, water3, death, null, this);
-   physics.add.collider(player, water4, death, null, this);
-   physics.add.collider(player2, water4, death, null, this);
-   physics.add.collider(player, water5, death, null, this);
-   physics.add.collider(player2, water5, death, null, this);
+    // [Bruna] Definindo colisão com a água.
+    physics.add.collider(player, water, deathG, null, this);
+    physics.add.collider(player2, water, deathH, null, this);
+    physics.add.collider(player, water2, deathI, null, this);
+    physics.add.collider(player2, water2, deathJ, null, this);
+    physics.add.collider(player, water3, deathK, null, this);
+    physics.add.collider(player2, water3, death, null, this);
+physics.add.collider(player, water4, deathL, null, this);
+physics.add.collider(player2, water4, deathM, null, this);
+physics.add.collider(player, water5, deathN, null, this);
+physics.add.collider(player2, water5, deathO, null, this);
 
 
 // ================================================
