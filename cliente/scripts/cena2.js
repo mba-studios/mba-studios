@@ -475,16 +475,16 @@ cena2.update = function () {
 
 
     // [Bruna] Definindo colisão com a água.
-this.physics.add.collider(player, water, deathG, null, this);
-this.physics.add.collider(player2, water, deathH, null, this);
-this.physics.add.collider(player, water2, deathI, null, this);
-this.physics.add.collider(player2, water2, deathJ, null, this);
-this.physics.add.collider(player, water3, deathK, null, this);
-this.physics.add.collider(player2, water3, death, null, this);
-this.physics.add.collider(player, water4, deathL, null, this);
-this.physics.add.collider(player2, water4, deathM, null, this);
-this.physics.add.collider(player, water5, deathN, null, this);
-this.physics.add.collider(player2, water5, deathO, null, this);
+this.physics.add.collider(player, water, deathG);
+this.physics.add.collider(player2, water, deathH);
+this.physics.add.collider(player, water2, deathI);
+this.physics.add.collider(player2, water2, deathJ);
+this.physics.add.collider(player, water3, deathK);
+this.physics.add.collider(player2, water3, death);
+this.physics.add.collider(player, water4, deathL);
+this.physics.add.collider(player2, water4, deathM);
+this.physics.add.collider(player, water5, deathN);
+this.physics.add.collider(player2, water5, deathO);
 
 
 // ================================================
