@@ -240,49 +240,6 @@ cena1.create = function () {
     this.physics.add.collider(water3, platforms);
     this.physics.add.collider(gate, platforms);
 
-    // [Arthur] Incluindo movimentação dos personagens e ativando a função dos sprites.
-    //   this.input.keyboard.on(
-    //     "keydown_A",
-    //     function () {
-    //       player2.setVelocityX(-160);
-    //       player2.anims.play("left2", true);
-    //     },
-    //     this
-    //   );
-    //   this.input.keyboard.on(
-    //     "keyup_A",
-    //     function () {
-    //       player2.setVelocityX(0);
-    //       player2.anims.play("turn2", true);
-    //     },
-    //     this
-    //   );
-    //   this.input.keyboard.on(
-    //     "keydown_D",
-    //     function () {
-    //       player2.setVelocityX(+160);
-    //       player2.anims.play("right2", true);
-    //     },
-    //     this
-    //   );
-    //   this.input.keyboard.on(
-    //     "keyup_D",
-    //     function () {
-    //       player2.setVelocityX(0);
-    //       player2.anims.play("turn2", true);
-    //     },
-    //     this
-    //   );
-    //   this.input.keyboard.on(
-    //     "keydown_W",
-    //     function () {
-    //       if (player2.body.touching.down == 1) {
-    //         player2.setVelocityY(-300);
-    //         pular.play();
-    //       }
-    //     },
-    //     this
-    //   );
 
     // [Arthur] Função para avançar a cena, posteriormente será trocada por um evento de colisão.
     this.input.keyboard.on(
@@ -384,74 +341,74 @@ cena1.create = function () {
 cena1.update = function () {
     if (jogador === 1) {
         if (cursors.left.isDown) {
-            player1.body.setVelocityX(-160);
+            player1.body.setVelocityX(-200);
             player1.anims.play("left", true);
         } else if (cursors.right.isDown) {
-            player1.body.setVelocityX(160);
+            player1.body.setVelocityX(200);
             player1.anims.play("right", true);
         } else {
-            player1.body.setVelocity(0);
+            player1.body.setVelocityX(0);
             player1.anims.play("turn", true);
         }
         if (cursors.up.isDown && player1.body.touching.down) {
-            player1.body.setVelocityY(-160);
+            player1.body.setVelocityY(-300);
         }
         this.socket.emit("estadoDoJogador", {
             frame: player1.anims.currentFrame.index,
             x: player1.body.x,
-            y: player1.body.y,
+            y: player1.body.y + 10,
         });
     } else if (jogador === 2) {
         if (cursors.left.isDown) {
-            player2.body.setVelocityX(-100);
+            player2.body.setVelocityX(-200);
             player2.anims.play("left2", true);
         } else if (cursors.right.isDown) {
-            player2.body.setVelocityX(100);
+            player2.body.setVelocityX(200);
             player2.anims.play("right2", true);
         } else {
-            player2.body.setVelocity(0);
+            player2.body.setVelocityX(0);
             player2.anims.play("turn2", true);
         }
         if (cursors.up.isDown && player2.body.touching.down) {
-            player2.body.setVelocityY(-100);
+            player2.body.setVelocityY(-250);
         }
         this.socket.emit("estadoDoJogador", {
             frame: player2.anims.currentFrame.index,
             x: player2.body.x,
-            y: player2.body.y,
+            y: player2.body.y + 10,
         });
     }
 
-       function deathA(player1, water){
-            this.scene.start(cena3);
+    function deathA(player1, water) {
+        this.scene.start(cena3);
 
     }
-    function deathB(player2, water){
-            this.scene.start(cena3);
-
-    }
-
-    function deathC(player1, water2){
-            this.scene.start(cena3);
+    function deathB(player2, water) {
+        this.scene.start(cena3);
 
     }
 
-   function deathD(player2, water2){
-            this.scene.start(cena3);
+    function deathC(player1, water2) {
+        this.scene.start(cena3);
 
     }
 
-   function deathE(player1, water3){
-            this.scene.start(cena3);
+    function deathD(player2, water2) {
+        this.scene.start(cena3);
 
     }
 
-   function deathF(player2, water3){
-            this.scene.start(cena3);
+    function deathE(player1, water3) {
+        this.scene.start(cena3);
 
     }
 
-   
+    function deathF(player2, water3) {
+        this.scene.start(cena3);
+
+    }
+
+
 
     // [Bruna] Definindo colisão com a água.
     this.physics.add.collider(player1, water, deathA);
