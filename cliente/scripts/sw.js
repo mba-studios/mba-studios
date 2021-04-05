@@ -1,5 +1,5 @@
 const version = "0.1.0";
-const cacheName = "boidacarapreta-contos";
+const cacheName = "mbastudios-contos";
 const precacheResources = [
     "./assets/dino1.png",
     "./assets/fullscreen.png",
