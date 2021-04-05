@@ -24,7 +24,6 @@ const precacheResources = [
     "./js/index.js",
     "./main.css",
     "./manifest.json",
-    "./sw.js",
 ];
 
 self.addEventListener("install", (event) => {
