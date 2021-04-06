@@ -23,6 +23,7 @@ const precacheResources = [
     "./scripts/gameover.js",
     "./scripts/index.js",
     "./manifest.json",
+    "./phaser.min.js",
 ];
 
 self.addEventListener("install", (event) => {
