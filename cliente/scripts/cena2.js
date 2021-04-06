@@ -424,51 +424,51 @@ cena2.update = function () {
 // [Bruna] Definindo função do game over.
 
 function deathG(player, water) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 function deathH(player2, water) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathI(player, water2) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathJ(player2, water2) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathK(player, water3) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathL(player2, water3) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathM(player, water4) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathN(player2, water4) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathO(player, water5) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 
 function deathP(player2, water5) {
-    this.scene.start(cena3);
+    this.scene.start(gameover);
 
 }
 

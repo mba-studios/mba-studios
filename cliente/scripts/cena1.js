@@ -380,31 +380,31 @@ cena1.update = function () {
     }
 
     function deathA(player1, water) {
-        this.scene.start(cena3);
+        this.scene.start(gameover);
 
     }
     function deathB(player2, water) {
-        this.scene.start(cena3);
+        this.scene.start(gameover);
 
     }
 
     function deathC(player1, water2) {
-        this.scene.start(cena3);
+        this.scene.start(gameover);
 
     }
 
     function deathD(player2, water2) {
-        this.scene.start(cena3);
+        this.scene.start(gameover);
 
     }
 
     function deathE(player1, water3) {
-        this.scene.start(cena3);
+        this.scene.start(gameover);
 
     }
 
     function deathF(player2, water3) {
-        this.scene.start(cena3);
+        this.scene.start(gameover);
 
     }
 
