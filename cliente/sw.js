@@ -17,12 +17,11 @@ const precacheResources = [
     "./assets/portal.agua1.png",
     "./assets/pular.mp3",
     "./index.html",
-    "./js/cena0.js",
-    "./js/cena1.js",
-    "./js/cena2.js",
-    "./js/cena3.js",
-    "./js/index.js",
-    "./main.css",
+    "./scripts/cena0.js",
+    "./scripts/cena1.js",
+    "./scripts/cena2.js",
+    "./scripts/gameover.js",
+    "./scripts/index.js",
     "./manifest.json",
 ];
 
