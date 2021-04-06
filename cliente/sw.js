@@ -14,7 +14,7 @@ const precacheResources = [
     "./assets/plano de fundo.png",
     "./assets/planodefundofogo3.png",
     "./assets/plataformagelo.png",
-    "./assets/portal.agua1.png",
+    "./assets/Portal.agua1.png",
     "./assets/pular.mp3",
     "./index.html",
     "./scripts/cena0.js",
