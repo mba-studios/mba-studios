@@ -7,6 +7,8 @@
     "theme_color": "#000000",
     "background_color": "#000000",
     "orientation": "any",
+    "manifest_version": 2,
+    "version": "0.1.0",
     "icons": [
         {
             "src": "assets/logo-128.png",
