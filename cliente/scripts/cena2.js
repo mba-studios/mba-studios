@@ -5,8 +5,8 @@ Date: 26 / 12 / 2020
 Brief: third import archive.
 */
 
-// [Arthur] importando a cena seguinte do arquivo "cena3.js"
-import { cena3 } from "./gameover.js";
+// [Arthur] importando a cena seguinte do arquivo "gameover.js"
+import { gameover } from "./gameover.js";
 
 // [Arthur] Adicionando variáveis ao código para execução dos comandos. 
 var player;
@@ -338,7 +338,7 @@ cena2.create = function () {
         "keydown_X",
         function () {
             trilha.stop();
-            this.scene.start(cena3);
+            this.scene.start(gameover);
         },
         this
     );
@@ -475,16 +475,16 @@ function deathP(player2, water5) {
 
 
 /* [Bruna] Definindo colisão com a água.
-this.physics.add.collider(player, water, deathG);
-this.physics.add.collider(player2, water, deathH);
-this.physics.add.collider(player, water2, deathI);
-this.physics.add.collider(player2, water2, deathJ);
-this.physics.add.collider(player, water3, deathK);
-this.physics.add.collider(player2, water3, deathL);
-this.physics.add.collider(player, water4, deathM);
-this.physics.add.collider(player2, water4, deathN);
-this.physics.add.collider(player, water5, deathO);
-this.physics.add.collider(player2, water5, deathP);
+this.physics.add.collider(player, water, deathG, null, this);
+this.physics.add.collider(player2, water, deathH, null, this);
+this.physics.add.collider(player, water2, deathI, null, this);
+this.physics.add.collider(player2, water2, deathJ, null, this);
+this.physics.add.collider(player, water3, deathK, null, this);
+this.physics.add.collider(player2, water3, deathL, null, this);
+this.physics.add.collider(player, water4, deathM, null, this);
+this.physics.add.collider(player2, water4, deathN, null, this);
+this.physics.add.collider(player, water5, deathO, null, this);
+this.physics.add.collider(player2, water5, deathP, null, this);
 
 */
 

@@ -10,11 +10,11 @@ import { cena0 } from "./cena0.js";
 
 
 // [Arthur] Adicionando variáveis ao código para execução da transição de cena. 
-var cena3 = new Phaser.Scene("Cena 3");
+var gameover = new Phaser.Scene("Cena 3");
 
 
 // [Arthur] Adicionando as imagens para a tela de inicio do jogo. 
-cena3.preload = function () {
+gameover.preload = function () {
 
     // [Arthur] Adicionando imagem de fundo 
     this.load.image("perdeu", "./assets/gameovertela.png");
@@ -27,7 +27,7 @@ cena3.preload = function () {
 
 
 // [Arthur] Criando função para executar o comando de troca de cena. 
-cena3.create = function () {
+gameover.create = function () {
     var button = this.add.image(400, 300, "perdeu", 0).setInteractive();
     button.on(
         "pointerdown",
@@ -77,7 +77,7 @@ cena3.create = function () {
     );
 };
 
-cena3.update = function () { };
+gameover.update = function () { };
 
-// [Arthur] Exportando a cena3 para o HTML. 
-export { cena3 };
+// [Arthur] Exportando a gameover para o HTML. 
+export { gameover };
