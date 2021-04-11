@@ -411,12 +411,13 @@ cena1.update = function () {
 
 
     // [Bruna] Definindo colisão com a água.
-    this.physics.add.collider(player1, water, deathA);
-    this.physics.add.collider(player2, water, deathB);
-    this.physics.add.collider(player1, water2, deathC);
-    this.physics.add.collider(player2, water2, deathD);
-    this.physics.add.collider(player1, water3, deathE);
-    this.physics.add.collider(player2, water3, deathF);
+    this.physics.add.collider(player1, water, deathA, null, this);
+    this.physics.add.collider(player2, water, deathB, null, this);
+    this.physics.add.collider(player1, water2, deathC, null, this);
+    this.physics.add.collider(player2, water2, deathD, null, this);
+    this.physics.add.collider(player1, water3, deathE, null, this);
+    this.physics.add.collider(player2, water3, deathF, null, this);
+
 
     // ================================================
     // [Arthur] Iniciando a função contdown, para fazer a contagem do tempo da cena.

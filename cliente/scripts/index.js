@@ -9,7 +9,7 @@ Brief: initial import archive.
 import { cena0 } from "./cena0.js";
 import { cena1 } from "./cena1.js";
 import { cena2 } from "./cena2.js";
-import { cena3 } from "./gameover.js";
+import { gameover } from "./gameover.js";
 
 // [Arthur] Adicionando pré configurações do jogo. 
 const config = {
@@ -34,7 +34,7 @@ const config = {
 
 
     // [Arthur] Adicionando sequencia de fases. 
-    scene: [cena0, cena1, cena2, cena3],
+    scene: [cena0, cena1, cena2, gameover],
 };
 
 const game = new Phaser.Game(config);
