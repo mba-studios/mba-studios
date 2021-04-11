@@ -378,6 +378,7 @@ cena1.update = function () {
             y: player2.body.y + 10,
         });
     }
+    //[Bruna] Funções para o jogador perder ao cair na água;
 
     function deathA(player1, water) {
         this.scene.start(gameover);
@@ -408,9 +409,19 @@ cena1.update = function () {
 
     }
 
+    //[Bruna] Funções para o jogador passar a fase ao chegar ao portão;
 
+    function levelup(player1, gate) {
+        this.scene.start(cena2);
 
-    // [Bruna] Definindo colisão com a água.
+    }
+
+    function levelup1(player2, gate) {
+        this.scene.start(cena2);
+
+    }
+
+    // [Bruna] Definindo colisão com a água;
     this.physics.add.collider(player1, water, deathA, null, this);
     this.physics.add.collider(player2, water, deathB, null, this);
     this.physics.add.collider(player1, water2, deathC, null, this);
@@ -418,6 +429,9 @@ cena1.update = function () {
     this.physics.add.collider(player1, water3, deathE, null, this);
     this.physics.add.collider(player2, water3, deathF, null, this);
 
+    //[Bruna] Definindo colisão com o portão;
+    this.physics.add.collider(player1, gate, levelup, null, this);
+    this.physics.add.collider(player2, gate, levelup2, null, this);
 
     // ================================================
     // [Arthur] Iniciando a função contdown, para fazer a contagem do tempo da cena.
