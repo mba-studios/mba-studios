@@ -421,7 +421,7 @@ cena1.update = function () {
 
     }
 
-    // [Bruna] Definindo colisão com a água;
+    /* [Bruna] Definindo colisão com a água;
     this.physics.add.collider(player1, water, deathA, null, this);
     this.physics.add.collider(player2, water, deathB, null, this);
     this.physics.add.collider(player1, water2, deathC, null, this);
@@ -432,7 +432,7 @@ cena1.update = function () {
     //[Bruna] Definindo colisão com o portão;
     this.physics.add.collider(player1, gate, levelup, null, this);
     this.physics.add.collider(player2, gate, levelup2, null, this);
-
+    */
     // ================================================
     // [Arthur] Iniciando a função contdown, para fazer a contagem do tempo da cena.
     function countdown() {
