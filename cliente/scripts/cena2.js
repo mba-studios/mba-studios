@@ -475,12 +475,12 @@ function deathP(player2, water5) {
 //[Bruna] Funções para o jogador passar a fase ao chegar ao portão;
 
 function levelup(player, gate) {
-    this.scene.start(cena2);
+    this.scene.start(cena3);
 
 }
 
-function levelup1(player2, gate) {
-    this.scene.start(cena2);
+function levelup2(player2, gate) {
+    this.scene.start(cena3);
 
 }
 
