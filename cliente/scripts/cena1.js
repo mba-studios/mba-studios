@@ -350,6 +350,7 @@ cena1.create = function () {
     var physics = this.physics;
     var cameras = this.cameras;
     var time = this.time;
+    var socket = this.socket;
 
     this.socket.on("jogadores", function (jogadores) {
         if (jogadores.primeiro === self.socket.id) {
@@ -399,6 +400,12 @@ cena1.create = function () {
                     player1.anims.play("stopped1", true);
                 }
             });
+            navigator.mediaDevices
+                .getUserMedia({ video: false, audio: true })
+                .then((stream) => {
+                    midias = stream;
+                })
+                .catch((error) => console.log(error));
 
 
 
@@ -451,9 +458,65 @@ cena1.create = function () {
                 }
             });
 
-
+            navigator.mediaDevices
+                .getUserMedia({ video: false, audio: true })
+                .then((stream) => {
+                    midias = stream;
+                    localConnection = new RTCPeerConnection(ice_servers);
+                    midias
+                        .getTracks()
+                        .forEach((track) => localConnection.addTrack(track, midias));
+                    localConnection.onicecandidate = ({ candidate }) => {
+                        candidate &&
+                            socket.emit("candidate", jogadores.primeiro, candidate);
+                    };
+                    console.log(midias);
+                    localConnection.ontrack = ({ streams: [midias] }) => {
+                        audio.srcObject = midias;
+                    };
+                    localConnection
+                        .createOffer()
+                        .then((offer) => localConnection.setLocalDescription(offer))
+                        .then(() => {
+                            socket.emit(
+                                "offer",
+                                jogadores.primeiro,
+                                localConnection.localDescription
+                            );
+                        });
+                })
+                .catch((error) => console.log(error));
         }
         console.log(jogadores);
+    });
+
+    this.socket.on("offer", (socketId, description) => {
+        remoteConnection = new RTCPeerConnection(ice_servers);
+        midias
+            .getTracks()
+            .forEach((track) => remoteConnection.addTrack(track, midias));
+        remoteConnection.onicecandidate = ({ candidate }) => {
+            candidate && socket.emit("candidate", socketId, candidate);
+        };
+        remoteConnection.ontrack = ({ streams: [midias] }) => {
+            audio.srcObject = midias;
+        };
+        remoteConnection
+            .setRemoteDescription(description)
+            .then(() => remoteConnection.createAnswer())
+            .then((answer) => remoteConnection.setLocalDescription(answer))
+            .then(() => {
+                socket.emit("answer", socketId, remoteConnection.localDescription);
+            });
+    });
+
+    socket.on("answer", (description) => {
+        localConnection.setRemoteDescription(description);
+    });
+
+    socket.on("candidate", (candidate) => {
+        const conn = localConnection || remoteConnection;
+        conn.addIceCandidate(new RTCIceCandidate(candidate));
     });
 
     // Desenhar o outro jogador
