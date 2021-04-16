@@ -28,6 +28,13 @@ var timer;
 var timerText;
 var jogador;
 var cena1 = new Phaser.Scene("Cena 1");
+var ice_servers = {
+    iceServers: [{ url: "stun:stun.l.google.com:19302" }],
+};
+var localConnection;
+var remoteConnection;
+var midias;
+const audio = document.querySelector("audio");
 
 // ===============================================================================
 // [Arthur] Iniciando a função Preload, para carregar os arquivos iniciais da cena.
