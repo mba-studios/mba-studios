@@ -466,14 +466,14 @@ cena1.create = function () {
 // ================================================
 // [Arthur] Iniciando a função update a cena, a função é executada em loop para algumas mecânicas da fase.
 cena1.update = function () {
-    if (jogador === 1) {
+    if (jogador === 1 && player1.anims.currentFrame) {
 
         this.socket.emit("estadoDoJogador", {
             frame: player1.anims.currentFrame.index,
             x: player1.body.x,
             y: player1.body.y + 10,
         });
-    } else if (jogador === 2) {
+    } else if (jogador === 2 && player2.anims.currentFrame) {
 
         this.socket.emit("estadoDoJogador", {
             frame: player2.anims.currentFrame.index,
