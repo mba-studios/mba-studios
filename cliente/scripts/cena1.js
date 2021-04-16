@@ -351,46 +351,46 @@ cena1.create = function () {
             player2.body.setAllowGravity(false);
 
             esquerda.on("pointerover", () => {
-                if (timer > 0) {
-                    esquerda.setFrame(1);
-                    player1.setVelocityX(-160);
-                    player1.anims.play("left1", true);
-                }
+
+                esquerda.setFrame(1);
+                player1.setVelocityX(-160);
+                player1.anims.play("left1", true);
+
             });
             esquerda.on("pointerout", () => {
-                if (timer > 0) {
-                    esquerda.setFrame(0);
-                    player1.setVelocityX(0);
-                    player1.anims.play("stopped1", true);
-                }
+
+                esquerda.setFrame(0);
+                player1.setVelocityX(0);
+                player1.anims.play("stopped1", true);
+
             });
             direita.on("pointerover", () => {
-                if (timer > 0) {
-                    direita.setFrame(1);
-                    player1.setVelocityX(160);
-                    player1.anims.play("right1", true);
-                }
+
+                direita.setFrame(1);
+                player1.setVelocityX(160);
+                player1.anims.play("right1", true);
+
             });
             direita.on("pointerout", () => {
-                if (timer > 0) {
-                    direita.setFrame(0);
-                    player1.setVelocityX(0);
-                    player1.anims.play("stopped1", true);
-                }
+
+                direita.setFrame(0);
+                player1.setVelocityX(0);
+                player1.anims.play("stopped1", true);
+
             });
             cima.on("pointerover", () => {
-                if (timer > 0) {
-                    cima.setFrame(1);
-                    player1.setVelocityY(-160);
-                    player1.anims.play("right1", true);
-                }
+
+                cima.setFrame(1);
+                player1.setVelocityY(-160);
+                player1.anims.play("right1", true);
+
             });
             cima.on("pointerout", () => {
-                if (timer > 0) {
-                    cima.setFrame(0);
-                    player1.setVelocityY(0);
-                    player1.anims.play("stopped1", true);
-                }
+
+                cima.setFrame(0);
+                player1.setVelocityY(0);
+                player1.anims.play("stopped1", true);
+
             });
 
 
@@ -402,46 +402,46 @@ cena1.create = function () {
             player1.body.setAllowGravity(false);
 
             esquerda.on("pointerover", () => {
-                if (timer > 0) {
-                    esquerda.setFrame(1);
-                    player2.setVelocityX(-160);
-                    player2.anims.play("left2", true);
-                }
+
+                esquerda.setFrame(1);
+                player2.setVelocityX(-160);
+                player2.anims.play("left2", true);
+
             });
             esquerda.on("pointerout", () => {
-                if (timer > 0) {
-                    esquerda.setFrame(0);
-                    player2.setVelocityX(0);
-                    player2.anims.play("stopped2", true);
-                }
+
+                esquerda.setFrame(0);
+                player2.setVelocityX(0);
+                player2.anims.play("stopped2", true);
+
             });
             direita.on("pointerover", () => {
-                if (timer > 0) {
-                    direita.setFrame(1);
-                    player2.setVelocityX(160);
-                    player2.anims.play("right2", true);
-                }
+
+                direita.setFrame(1);
+                player2.setVelocityX(160);
+                player2.anims.play("right2", true);
+
             });
             direita.on("pointerout", () => {
-                if (timer > 0) {
-                    direita.setFrame(0);
-                    player2.setVelocityX(0);
-                    player2.anims.play("stopped2", true);
-                }
+
+                direita.setFrame(0);
+                player2.setVelocityX(0);
+                player2.anims.play("stopped2", true);
+
             });
             cima.on("pointerover", () => {
-                if (timer > 0) {
-                    cima.setFrame(1);
-                    player2.setVelocityY(-160);
-                    player2.anims.play("right2", true);
-                }
+
+                cima.setFrame(1);
+                player2.setVelocityY(-160);
+                player2.anims.play("right2", true);
+
             });
             cima.on("pointerout", () => {
-                if (timer > 0) {
-                    cima.setFrame(0);
-                    player2.setVelocityY(0);
-                    player2.anims.play("stopped2", true);
-                }
+
+                cima.setFrame(0);
+                player2.setVelocityY(0);
+                player2.anims.play("stopped2", true);
+
             });
 
 
