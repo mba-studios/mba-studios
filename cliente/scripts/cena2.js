@@ -34,8 +34,8 @@ cena2.preload = function () {
 
     // [Arthur] Carregando imagens para a cena.
     this.load.image("sky", "./assets/plano de fundo.png");
-    this.load.image("ground", "./assets/plataformagelo.png");
-    this.load.image("wall", "./assets/plataformagelovertical.png");
+    this.load.image("ground", "./assets/plataformafogo.png");
+    this.load.image("wall", "./assets/plataformafogo-vert.png");
     this.load.image("slab", "./assets/plataformagelohorizontalmeiobloco.png");
     this.load.image("bomb", "./assets/bomb.png");
 
