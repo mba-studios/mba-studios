@@ -233,12 +233,12 @@ cena1.create = function () {
     cursors = this.input.keyboard.createCursorKeys();
 
     // [Arthur] Adicionando sistema de colisão a fase.
-    this.physics.add.collider(player1, platforms);
-    this.physics.add.collider(player2, platforms);
-    this.physics.add.collider(water, platforms);
-    this.physics.add.collider(water2, platforms);
-    this.physics.add.collider(water3, platforms);
-    this.physics.add.collider(gate, platforms);
+    this.physics.add.collider(player1, platforms, null, null, this);
+    this.physics.add.collider(player2, platforms, null, null, this);
+    this.physics.add.collider(water, platforms, null, null, this);
+    this.physics.add.collider(water2, platforms, null, null, this);
+    this.physics.add.collider(water3, platforms, null, null, this);
+    this.physics.add.collider(gate, platforms, null, null, this);
 
 
     // [Arthur] Função para avançar a cena, posteriormente será trocada por um evento de colisão.
