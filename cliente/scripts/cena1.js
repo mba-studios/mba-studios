@@ -12,7 +12,9 @@ import { cena2 } from "./cena2.js";
 var player1;
 var player2;
 var platforms;
-var cursors;
+var pointer;
+var touchX;
+var touchY;
 var water;
 var water2;
 var water3;
@@ -61,6 +63,21 @@ cena1.preload = function () {
         frameWidth: 64,
         frameHeight: 64,
     });
+
+    // Iniciando Toque na tela
+    this.load.spritesheet("esquerda", "./assets/esquerda.png", {
+        frameWidth: 64,
+        frameHeight: 64,
+    });
+    this.load.spritesheet("direita", "./assets/direita.png", {
+        frameWidth: 64,
+        frameHeight: 64,
+    });
+    this.load.spritesheet("cima", "./assets/cima.png", {
+        frameWidth: 64,
+        frameHeight: 64,
+    });
+
 };
 
 // ===============================================================================
@@ -181,6 +198,9 @@ cena1.create = function () {
     // ================================================
     // [Arthur] Incluindo grupo de sprites a cena.
 
+    // Interação por toque de tela (até 2 toques simultâneos: 0 a 1)
+    pointer = this.input.addPointer(1);
+
     // [Arthur] Incluindo sprites do player Nº 1.
     player1 = this.physics.add.sprite(128, 500, "dude");
     //   player1.setBounce(0.2);
@@ -230,7 +250,7 @@ cena1.create = function () {
     });
 
     // [Arthur] Igualando as funções de sprite aos cursores da funçao seguinte.
-    cursors = this.input.keyboard.createCursorKeys();
+    //cursors = this.input.keyboard.createCursorKeys();
 
     // [Arthur] Adicionando sistema de colisão a fase.
     this.physics.add.collider(player1, platforms, null, null, this);
@@ -239,6 +259,21 @@ cena1.create = function () {
     this.physics.add.collider(water2, platforms, null, null, this);
     this.physics.add.collider(water3, platforms, null, null, this);
     this.physics.add.collider(gate, platforms, null, null, this);
+
+
+    // D-pad
+    var esquerda = this.add
+        .image(50, 550, "esquerda", 0)
+        .setInteractive()
+        .setScrollFactor(0);
+    var direita = this.add
+        .image(125, 550, "direita", 0)
+        .setInteractive()
+        .setScrollFactor(0);
+    var cima = this.add
+        .image(750, 475, "cima", 0)
+        .setInteractive()
+        .setScrollFactor(0);
 
 
     // [Arthur] Função para avançar a cena, posteriormente será trocada por um evento de colisão.
@@ -314,10 +349,102 @@ cena1.create = function () {
             // Define jogador como o primeiro
             jogador = 1;
             player2.body.setAllowGravity(false);
+
+            esquerda.on("pointerover", () => {
+                if (timer > 0) {
+                    esquerda.setFrame(1);
+                    player1.setVelocityX(-160);
+                    player1.anims.play("left1", true);
+                }
+            });
+            esquerda.on("pointerout", () => {
+                if (timer > 0) {
+                    esquerda.setFrame(0);
+                    player1.setVelocityX(0);
+                    player1.anims.play("stopped1", true);
+                }
+            });
+            direita.on("pointerover", () => {
+                if (timer > 0) {
+                    direita.setFrame(1);
+                    player1.setVelocityX(160);
+                    player1.anims.play("right1", true);
+                }
+            });
+            direita.on("pointerout", () => {
+                if (timer > 0) {
+                    direita.setFrame(0);
+                    player1.setVelocityX(0);
+                    player1.anims.play("stopped1", true);
+                }
+            });
+            cima.on("pointerover", () => {
+                if (timer > 0) {
+                    cima.setFrame(1);
+                    player1.setVelocityY(-160);
+                    player1.anims.play("right1", true);
+                }
+            });
+            cima.on("pointerout", () => {
+                if (timer > 0) {
+                    cima.setFrame(0);
+                    player1.setVelocityY(0);
+                    player1.anims.play("stopped1", true);
+                }
+            });
+
+
+
+
         } else if (jogadores.segundo === self.socket.id) {
             // Define jogador como o segundo
             jogador = 2;
             player1.body.setAllowGravity(false);
+
+            esquerda.on("pointerover", () => {
+                if (timer > 0) {
+                    esquerda.setFrame(1);
+                    player2.setVelocityX(-160);
+                    player2.anims.play("left2", true);
+                }
+            });
+            esquerda.on("pointerout", () => {
+                if (timer > 0) {
+                    esquerda.setFrame(0);
+                    player2.setVelocityX(0);
+                    player2.anims.play("stopped2", true);
+                }
+            });
+            direita.on("pointerover", () => {
+                if (timer > 0) {
+                    direita.setFrame(1);
+                    player2.setVelocityX(160);
+                    player2.anims.play("right2", true);
+                }
+            });
+            direita.on("pointerout", () => {
+                if (timer > 0) {
+                    direita.setFrame(0);
+                    player2.setVelocityX(0);
+                    player2.anims.play("stopped2", true);
+                }
+            });
+            cima.on("pointerover", () => {
+                if (timer > 0) {
+                    cima.setFrame(1);
+                    player2.setVelocityY(-160);
+                    player2.anims.play("right2", true);
+                }
+            });
+            cima.on("pointerout", () => {
+                if (timer > 0) {
+                    cima.setFrame(0);
+                    player2.setVelocityY(0);
+                    player2.anims.play("stopped2", true);
+                }
+            });
+
+
         }
         console.log(jogadores);
     });
@@ -340,45 +467,20 @@ cena1.create = function () {
 // [Arthur] Iniciando a função update a cena, a função é executada em loop para algumas mecânicas da fase.
 cena1.update = function () {
     if (jogador === 1) {
-        if (cursors.left.isDown) {
-            player1.body.setVelocityX(-200);
-            player1.anims.play("left", true);
-        } else if (cursors.right.isDown) {
-            player1.body.setVelocityX(200);
-            player1.anims.play("right", true);
-        } else {
-            player1.body.setVelocityX(0);
-            player1.anims.play("turn", true);
-        }
-        if (cursors.up.isDown && player1.body.touching.down) {
-            player1.body.setVelocityY(-300);
-        }
+
         this.socket.emit("estadoDoJogador", {
             frame: player1.anims.currentFrame.index,
             x: player1.body.x,
             y: player1.body.y + 10,
         });
     } else if (jogador === 2) {
-        if (cursors.left.isDown) {
-            player2.body.setVelocityX(-200);
-            player2.anims.play("left2", true);
-        } else if (cursors.right.isDown) {
-            player2.body.setVelocityX(200);
-            player2.anims.play("right2", true);
-        } else {
-            player2.body.setVelocityX(0);
-            player2.anims.play("turn2", true);
-        }
-        if (cursors.up.isDown && player2.body.touching.down) {
-            player2.body.setVelocityY(-250);
-        }
+
         this.socket.emit("estadoDoJogador", {
             frame: player2.anims.currentFrame.index,
             x: player2.body.x,
             y: player2.body.y + 10,
         });
     }
-
     function deathA(player1, water) {
         this.scene.start(cena3);
 
