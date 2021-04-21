@@ -5,7 +5,7 @@ Date: 26 / 12 / 2020
 Brief: second import archive.
 */
 
-// [Arthur] importando a cena seguinte do arquivo "cena2.js"
+// [Arthur] importando a cena seguinte do arquivo "cena2.js."
 import { cena2 } from "./cena2.js";
 
 // [Arthur] Adicionando variáveis ao código para execução dos comandos.
